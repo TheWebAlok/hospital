@@ -1,0 +1,816 @@
+/* =====================================================
+   PATIENT VIDEO CONSULTATION
+===================================================== */
+
+.patient-video-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  color: #172033;
+  overflow: hidden;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.patient-video-header {
+  height: 72px;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.patient-video-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.patient-video-back {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #eef2f7;
+  color: #374151;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.patient-video-back:hover {
+  background: #e2e8f0;
+}
+
+.patient-video-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #172033;
+}
+
+.patient-video-header p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =====================================================
+   CONNECTION STATUS
+===================================================== */
+
+.patient-video-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #4b5563;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #9ca3af;
+}
+
+.status-dot.online {
+  background: #22c55e;
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.patient-video-error {
+  margin: 14px 24px;
+
+  padding: 12px 16px;
+
+  border-radius: 8px;
+
+  background: #fee2e2;
+  color: #991b1b;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   MAIN VIDEO AREA
+===================================================== */
+
+.patient-video-main {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 72px);
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   DOCTOR REMOTE VIDEO
+===================================================== */
+
+.patient-remote-video-box {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  background: #111827;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.patient-remote-video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  background: #111827;
+}
+
+/* =====================================================
+   WAITING FOR DOCTOR
+===================================================== */
+
+.patient-waiting {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background: #111827;
+}
+
+.patient-waiting-icon {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1f2937;
+
+  margin-bottom: 18px;
+}
+
+.patient-waiting h3 {
+  margin: 0 0 7px;
+
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.patient-waiting p {
+  margin: 0;
+
+  max-width: 400px;
+
+  color: #cbd5e1;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   DOCTOR NAME
+===================================================== */
+
+.patient-remote-name {
+  position: absolute;
+
+  left: 16px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =====================================================
+   PATIENT LOCAL VIDEO
+===================================================== */
+
+.patient-local-video-box {
+  position: absolute;
+
+  top: 40px;
+  right: 40px;
+
+  width: 240px;
+  height: 160px;
+
+  background: #000000;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25);
+
+  z-index: 5;
+}
+
+.patient-local-video {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =====================================================
+   CAMERA OFF
+===================================================== */
+
+.patient-camera-off {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  background: #1f2937;
+
+  color: #ffffff;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   PATIENT NAME
+===================================================== */
+
+.patient-local-name {
+  position: absolute;
+
+  left: 9px;
+  bottom: 8px;
+
+  padding: 5px 8px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  color: #ffffff;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+}
+
+/* =====================================================
+   VIDEO CONTROLS
+===================================================== */
+
+.patient-video-controls {
+  position: absolute;
+
+  left: 50%;
+  bottom: 32px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px 14px;
+
+  background: rgba(17, 24, 39, 0.94);
+
+  border-radius: 50px;
+
+  z-index: 20;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   NORMAL CONTROL
+===================================================== */
+
+.patient-control {
+  width: 46px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #374151;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.patient-control:hover {
+  background: #4b5563;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   CONTROL OFF
+===================================================== */
+
+.patient-control.control-off {
+  background: #dc2626;
+}
+
+.patient-control.control-off:hover {
+  background: #b91c1c;
+}
+
+/* =====================================================
+   CONTROL ACTIVE
+===================================================== */
+
+.patient-control.control-active {
+  background: #2563eb;
+}
+
+.patient-control.control-active:hover {
+  background: #1d4ed8;
+}
+
+/* =====================================================
+   END CALL
+===================================================== */
+
+.patient-end-call {
+  width: 50px;
+  height: 46px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  margin-left: 6px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.patient-end-call:hover {
+  background: #b91c1c;
+
+  transform: scale(1.04);
+}
+
+/* =====================================================
+   CHAT PANEL
+===================================================== */
+
+.patient-chat-panel {
+  position: absolute;
+
+  top: 92px;
+  right: 30px;
+  bottom: 100px;
+
+  width: 340px;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: 30;
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   CHAT HEADER
+===================================================== */
+
+.patient-chat-header {
+  min-height: 62px;
+
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+}
+
+.patient-chat-header div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.patient-chat-header strong {
+  font-size: 14px;
+  color: #111827;
+}
+
+.patient-chat-header span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.patient-chat-header button {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 23px;
+
+  color: #6b7280;
+
+  cursor: pointer;
+
+  border-radius: 6px;
+}
+
+.patient-chat-header button:hover {
+  background: #f3f4f6;
+}
+
+/* =====================================================
+   CHAT MESSAGES
+===================================================== */
+
+.patient-chat-messages {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 15px;
+
+  background: #f8fafc;
+}
+
+.patient-empty-chat {
+  text-align: center;
+
+  margin-top: 35px;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.patient-chat-message {
+  max-width: 80%;
+
+  margin-bottom: 13px;
+}
+
+.patient-chat-message span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+.patient-chat-message p {
+  margin: 0;
+
+  padding: 9px 12px;
+
+  border-radius: 10px;
+
+  background: #e5e7eb;
+
+  color: #111827;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  word-break: break-word;
+}
+
+/* =====================================================
+   PATIENT MESSAGE
+===================================================== */
+
+.patient-chat-own {
+  margin-left: auto;
+
+  text-align: right;
+}
+
+.patient-chat-own p {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.patient-chat-own span {
+  text-align: right;
+}
+
+/* =====================================================
+   CHAT FORM
+===================================================== */
+
+.patient-chat-form {
+  display: flex;
+
+  padding: 10px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.patient-chat-form input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 40px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d1d5db;
+
+  border-right: none;
+
+  border-radius: 8px 0 0 8px;
+
+  outline: none;
+
+  font-size: 13px;
+}
+
+.patient-chat-form input:focus {
+  border-color: #2563eb;
+}
+
+.patient-chat-form button {
+  width: 44px;
+
+  height: 40px;
+
+  border: none;
+
+  border-radius: 0 8px 8px 0;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.patient-chat-form button:hover {
+  background: #1d4ed8;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.patient-chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.patient-chat-messages::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.patient-chat-messages::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+  .patient-video-header {
+    padding: 0 16px;
+  }
+
+  .patient-video-main {
+    padding: 12px;
+  }
+
+  .patient-local-video-box {
+    top: 25px;
+    right: 25px;
+
+    width: 190px;
+    height: 130px;
+  }
+
+  .patient-chat-panel {
+    right: 20px;
+    width: 320px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .patient-video-header {
+    height: 62px;
+  }
+
+  .patient-video-header h2 {
+    font-size: 16px;
+  }
+
+  .patient-video-header p {
+    font-size: 10px;
+  }
+
+  .patient-video-status {
+    font-size: 11px;
+  }
+
+  .patient-video-main {
+    height: calc(100vh - 62px);
+
+    padding: 8px;
+  }
+
+  .patient-remote-video-box {
+    border-radius: 10px;
+  }
+
+  .patient-local-video-box {
+    top: 18px;
+    right: 18px;
+
+    width: 125px;
+    height: 90px;
+
+    border-radius: 8px;
+  }
+
+  .patient-video-controls {
+    bottom: 18px;
+
+    gap: 6px;
+
+    padding: 8px 9px;
+  }
+
+  .patient-control,
+  .patient-end-call {
+    width: 40px;
+    height: 40px;
+  }
+
+  .patient-end-call {
+    margin-left: 2px;
+  }
+
+  .patient-waiting h3 {
+    font-size: 18px;
+  }
+
+  .patient-waiting p {
+    max-width: 280px;
+
+    padding: 0 20px;
+
+    font-size: 12px;
+  }
+
+  .patient-chat-panel {
+    top: 75px;
+    right: 10px;
+    left: 10px;
+    bottom: 80px;
+
+    width: auto;
+
+    border-radius: 12px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+  .patient-control,
+  .patient-end-call {
+    width: 36px;
+    height: 36px;
+  }
+
+  .patient-video-controls {
+    gap: 4px;
+  }
+
+  .patient-local-video-box {
+    width: 110px;
+    height: 78px;
+  }
+}

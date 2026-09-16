@@ -1,0 +1,805 @@
+/* =====================================================
+   DOCTOR PROFILE PAGE
+===================================================== */
+
+.doctor-profile-page {
+  width: 100%;
+
+  padding: 22px 0 50px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.doctor-profile-page-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+.doctor-profile-page-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 27px;
+}
+
+
+.doctor-profile-page-header p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+.profile-main-edit-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: #4f46e5;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.profile-main-edit-btn:hover {
+  background: #4338ca;
+}
+
+
+/* =====================================================
+   PROFILE HERO
+===================================================== */
+
+.doctor-profile-hero {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 30px;
+
+  margin-bottom: 25px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(15, 23, 42, 0.04);
+}
+
+
+.doctor-profile-big-photo {
+  width: 125px;
+  height: 125px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 42px;
+
+  font-weight: 700;
+}
+
+
+.doctor-profile-big-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.doctor-profile-hero-info h2 {
+  margin: 0 0 6px;
+
+  color: #0f172a;
+
+  font-size: 25px;
+}
+
+
+.doctor-specialization {
+  margin: 0 0 15px;
+
+  color: #4f46e5;
+
+  font-weight: 600;
+
+  font-size: 15px;
+}
+
+
+.doctor-contact-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+
+.doctor-contact-row span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.doctor-profile-section {
+  margin-bottom: 25px;
+}
+
+
+.doctor-profile-section h2 {
+  margin: 0 0 13px;
+
+  color: #0f172a;
+
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   INFO GRID
+===================================================== */
+
+.doctor-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+
+.doctor-info-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 20px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+}
+
+
+.doctor-info-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+}
+
+
+.doctor-info-box div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.doctor-info-box span {
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+.doctor-info-box strong {
+  color: #0f172a;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   AVAILABILITY
+===================================================== */
+
+.availability-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 23px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 15px;
+}
+
+
+.availability-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 12px;
+
+  color: #475569;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.profile-days {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+
+.profile-day {
+  padding: 7px 12px;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.profile-day.active {
+  background: #4f46e5;
+
+  color: white;
+}
+
+
+.profile-time-box {
+  min-width: 190px;
+
+  padding: 15px;
+
+  border-radius: 11px;
+
+  background: #f8fafc;
+}
+
+
+.profile-time-box span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+.profile-time-box strong {
+  color: #0f172a;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   BIO
+===================================================== */
+
+.doctor-bio-box {
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 15px;
+}
+
+
+.doctor-bio-box p {
+  margin: 0;
+
+  color: #475569;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+.empty-profile-text {
+  color: #94a3b8 !important;
+}
+
+
+/* =====================================================
+   LINKEDIN
+===================================================== */
+
+.doctor-linkedin {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 17px;
+
+  border-radius: 10px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.doc-profile-loading {
+  padding: 50px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+
+/* =====================================================
+   EDIT MODAL
+===================================================== */
+
+.doc-edit-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(15, 23, 42, 0.55);
+}
+
+
+.doc-edit-modal {
+  width: min(850px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+.doc-edit-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.doc-edit-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 20px;
+}
+
+
+.doc-close-btn {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  border-radius: 9px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  cursor: pointer;
+}
+
+
+.doc-close-btn:hover {
+  background: #e2e8f0;
+}
+
+
+.doc-edit-form {
+  padding: 25px;
+}
+
+
+/* PHOTO */
+
+.doc-photo-upload {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+
+.doc-photo-preview {
+  width: 85px;
+  height: 85px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 30px;
+
+  font-weight: 700;
+}
+
+
+.doc-photo-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.doc-photo-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 9px;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* FORM GRID */
+
+.doc-edit-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+
+.doc-edit-grid input,
+.doc-edit-form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  color: #0f172a;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+
+.doc-edit-grid input:focus,
+.doc-edit-form textarea:focus {
+  border-color: #6366f1;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(99, 102, 241, 0.1);
+}
+
+
+.doc-edit-form textarea {
+  min-height: 110px;
+
+  margin-top: 15px;
+
+  resize: vertical;
+}
+
+
+/* DAYS */
+
+.doc-days-picker {
+  margin-top: 20px;
+}
+
+
+.doc-days-picker > label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+.doc-days-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.doc-day-chip {
+  padding: 8px 13px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+
+.doc-day-chip.active {
+  border-color: #4f46e5;
+
+  background: #4f46e5;
+
+  color: white;
+}
+
+
+/* SAVE */
+
+.doc-save-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 13px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: #4f46e5;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.doc-save-btn:hover {
+  background: #4338ca;
+}
+
+
+.doc-save-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .doctor-info-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .doctor-profile-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+
+  .profile-main-edit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .doctor-profile-hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .doctor-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .availability-box {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .profile-time-box {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .doc-edit-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

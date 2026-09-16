@@ -1,0 +1,446 @@
+/* ================================
+   SALE MODAL
+================================ */
+
+.sale-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sale-modal {
+  width: 100%;
+  max-width: 1100px;
+  max-height: 94vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.sale-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sale-modal-header h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+  color: #111827;
+}
+
+.sale-modal-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.sale-close-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sale-close-btn:hover {
+  background: #e5e7eb;
+}
+
+/* ================================
+   SECTIONS
+================================ */
+
+.sale-modal form {
+  padding: 24px;
+}
+
+.sale-section {
+  margin-bottom: 24px;
+}
+
+.sale-section h3 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: #111827;
+}
+
+.sale-section > p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ================================
+   FORM GRID
+================================ */
+
+.sale-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.sale-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sale-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.sale-form-group input,
+.sale-form-group textarea,
+.sale-form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.sale-form-group input,
+.sale-form-group select {
+  height: 43px;
+  padding: 0 12px;
+}
+
+.sale-form-group textarea {
+  padding: 11px 12px;
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
+}
+
+.sale-form-group input:focus,
+.sale-form-group textarea:focus,
+.sale-form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.sale-form-group input::placeholder,
+.sale-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ================================
+   ITEMS HEADER
+================================ */
+
+.sale-items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 16px;
+}
+
+.sale-items-header h3 {
+  margin-bottom: 4px;
+}
+
+.sale-items-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.sale-add-item-btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sale-add-item-btn:hover {
+  background: #dbeafe;
+}
+
+/* ================================
+   SALE ITEMS
+================================ */
+
+.sale-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sale-item-row {
+  display: grid;
+  grid-template-columns: minmax(230px, 2fr) 90px 120px 110px 110px 40px;
+  align-items: end;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.sale-medicine-field {
+  min-width: 0;
+}
+
+.sale-item-total {
+  min-height: 43px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 0 8px;
+}
+
+.sale-item-total span {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.sale-item-total strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+/* ================================
+   REMOVE ITEM
+================================ */
+
+.sale-remove-item-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sale-remove-item-btn:hover {
+  background: #fee2e2;
+}
+
+.sale-remove-item-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ================================
+   SUMMARY
+================================ */
+
+.sale-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 15px;
+  margin: 10px 0 24px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+}
+
+.sale-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sale-summary span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.sale-summary strong {
+  color: #111827;
+  font-size: 19px;
+}
+
+.sale-grand-total {
+  padding-left: 20px;
+  border-left: 1px solid #dfe3e8;
+}
+
+.sale-grand-total strong {
+  color: #2563eb;
+  font-size: 23px;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.sale-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sale-cancel-btn,
+.sale-save-btn {
+  min-height: 42px;
+  padding: 0 17px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.sale-cancel-btn {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.sale-cancel-btn:hover {
+  background: #f9fafb;
+}
+
+.sale-save-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+}
+
+.sale-save-btn:hover {
+  background: #1d4ed8;
+}
+
+.sale-cancel-btn:disabled,
+.sale-save-btn:disabled,
+.sale-close-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 950px) {
+  .sale-item-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sale-medicine-field {
+    grid-column: 1 / -1;
+  }
+
+  .sale-item-total {
+    min-height: 43px;
+  }
+
+  .sale-remove-item-btn {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 650px) {
+  .sale-modal-overlay {
+    padding: 10px;
+  }
+
+  .sale-modal {
+    max-height: 96vh;
+    border-radius: 10px;
+  }
+
+  .sale-modal-header {
+    padding: 18px;
+  }
+
+  .sale-modal form {
+    padding: 18px;
+  }
+
+  .sale-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .sale-items-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sale-add-item-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sale-item-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sale-medicine-field {
+    grid-column: auto;
+  }
+
+  .sale-remove-item-btn {
+    justify-self: start;
+  }
+
+  .sale-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .sale-grand-total {
+    padding-left: 0;
+    padding-top: 12px;
+    border-left: none;
+    border-top: 1px solid #dfe3e8;
+  }
+
+  .sale-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .sale-cancel-btn,
+  .sale-save-btn {
+    width: 100%;
+  }
+}

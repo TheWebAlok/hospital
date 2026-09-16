@@ -1,0 +1,346 @@
+.medicine-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.medicine-modal {
+  width: min(850px, 100%);
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.medicine-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #edf0f4;
+}
+
+.medicine-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.medicine-modal-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eaf2ff;
+  color: #1769e0;
+}
+
+.medicine-modal-title h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.medicine-modal-title p {
+  margin: 4px 0 0;
+
+  color: #8992a2;
+
+  font-size: 12px;
+}
+
+.medicine-close-btn {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f3f5f8;
+  color: #596273;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.medicine-close-btn:hover {
+  background: #e8ebf0;
+  color: #1f2937;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.medicine-form {
+  padding: 24px;
+}
+
+.medicine-form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.medicine-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.medicine-field-full {
+  grid-column: 1 / -1;
+}
+
+.medicine-field label {
+  color: #3c4658;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.medicine-field input,
+.medicine-field select,
+.medicine-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid #dfe3ea;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #273247;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.medicine-field textarea {
+  resize: vertical;
+}
+
+.medicine-field input:focus,
+.medicine-field select:focus,
+.medicine-field textarea:focus {
+  border-color: #1769e0;
+
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
+}
+
+.medicine-field input::placeholder,
+.medicine-field textarea::placeholder {
+  color: #a2a9b5;
+}
+
+/* =====================================================
+   CURRENCY INPUT
+===================================================== */
+
+.medicine-input-prefix {
+  display: flex;
+  align-items: stretch;
+}
+
+.medicine-input-prefix span {
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfe3ea;
+  border-right: none;
+
+  border-radius: 8px 0 0 8px;
+
+  background: #f7f8fa;
+
+  color: #687286;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.medicine-input-prefix input {
+  border-radius: 0 8px 8px 0;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.medicine-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 24px;
+  padding-top: 18px;
+
+  border-top: 1px solid #edf0f4;
+}
+
+.medicine-cancel-btn,
+.medicine-save-btn {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.medicine-cancel-btn {
+  border: 1px solid #dfe3ea;
+
+  background: #ffffff;
+
+  color: #596273;
+}
+
+.medicine-cancel-btn:hover {
+  background: #f6f7f9;
+}
+
+.medicine-save-btn {
+  border: none;
+
+  background: #1769e0;
+
+  color: #ffffff;
+}
+
+.medicine-save-btn:hover {
+  background: #1259bd;
+}
+
+.medicine-cancel-btn:disabled,
+.medicine-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   SPINNER
+===================================================== */
+
+.medicine-spin {
+  animation: medicine-spin 1s linear infinite;
+}
+
+@keyframes medicine-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.medicine-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.medicine-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.medicine-modal::-webkit-scrollbar-thumb {
+  background: #d7dce4;
+  border-radius: 10px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 650px) {
+  .medicine-modal-overlay {
+    padding: 10px;
+  }
+
+  .medicine-modal-header {
+    padding: 17px;
+  }
+
+  .medicine-form {
+    padding: 17px;
+  }
+
+  .medicine-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-field-full {
+    grid-column: auto;
+  }
+
+  .medicine-form-footer {
+    flex-direction: column-reverse;
+  }
+
+  .medicine-cancel-btn,
+  .medicine-save-btn {
+    width: 100%;
+  }
+}

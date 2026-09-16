@@ -1,0 +1,1086 @@
+/* =====================================================
+   DOCTORS PAGE
+===================================================== */
+
+.page-header {
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.page-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* =====================================================
+   DARK MODE HEADER
+===================================================== */
+
+.dark-mode .page-header h1 {
+  color: #f8fafc;
+}
+
+.dark-mode .page-header p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 0 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  color: #94a3b8;
+
+  transition: 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-box input {
+  width: 190px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 14px;
+
+  color: #334155;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+
+/* DARK SEARCH */
+
+.dark-mode .search-box {
+  background: #111827;
+
+  border-color: #334155;
+
+  color: #94a3b8;
+}
+
+.dark-mode .search-box input {
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.primary-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.05);
+}
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+  width: 100%;
+
+  min-width: 800px;
+
+  border-collapse: collapse;
+}
+
+.table-wrapper th {
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.table-wrapper td {
+  padding: 15px 16px;
+
+  color: #334155;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+}
+
+.table-wrapper tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   DARK TABLE
+===================================================== */
+
+.dark-mode .table-card {
+  background: #111827;
+
+  border-color: #334155;
+
+  box-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .table-wrapper th {
+  background: #1e293b;
+
+  color: #cbd5e1;
+
+  border-bottom-color: #334155;
+}
+
+.dark-mode .table-wrapper td {
+  color: #cbd5e1;
+
+  border-bottom-color: #334155;
+}
+
+.dark-mode .table-wrapper tbody tr:hover {
+  background: #1e293b;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.edit-btn,
+.delete-btn {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.edit-btn {
+  border: 1px solid #bfdbfe;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.edit-btn:hover {
+  background: #dbeafe;
+}
+
+.delete-btn {
+  border: 1px solid #fecaca;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty-message {
+  padding: 40px !important;
+
+  text-align: center;
+
+  color: #94a3b8 !important;
+}
+
+
+/* =====================================================
+   DOCTOR MODAL OVERLAY
+   IMPORTANT: unique class
+===================================================== */
+
+.doctor-modal-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.60);
+
+  z-index: 99999;
+
+  overflow-y: auto;
+}
+
+
+/* =====================================================
+   DOCTOR MODAL
+===================================================== */
+
+.doctor-modal {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.30);
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   MODAL HEADER
+===================================================== */
+
+.doctor-modal-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 22px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.doctor-modal-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.doctor-close-btn {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.doctor-close-btn:hover {
+  background: #e2e8f0;
+
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.doctor-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  padding: 22px;
+}
+
+.doctor-form input,
+.doctor-form select,
+.doctor-form textarea {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.doctor-form input:focus,
+.doctor-form select:focus,
+.doctor-form textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.doctor-form textarea {
+  min-height: 100px;
+
+  resize: vertical;
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+.password-field {
+  position: relative;
+
+  width: 100%;
+}
+
+.password-field input {
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+
+  right: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   FORM BUTTON
+===================================================== */
+
+.doctor-form .primary-btn {
+  grid-column: 1 / -1;
+
+  width: 100%;
+}
+
+
+/* =====================================================
+   DARK MODAL
+===================================================== */
+
+.dark-mode .doctor-modal {
+  background: #111827;
+
+  color: #f8fafc;
+}
+
+.dark-mode .doctor-modal-header {
+  background: #111827;
+
+  border-bottom-color: #334155;
+}
+
+.dark-mode .doctor-modal-header h2 {
+  color: #f8fafc;
+}
+
+.dark-mode .doctor-close-btn {
+  background: #1e293b;
+
+  color: #cbd5e1;
+}
+
+.dark-mode .doctor-close-btn:hover {
+  background: #334155;
+
+  color: #ffffff;
+}
+
+.dark-mode .doctor-form input,
+.dark-mode .doctor-form select,
+.dark-mode .doctor-form textarea {
+  background: #1e293b;
+
+  border-color: #475569;
+
+  color: #f8fafc;
+}
+
+.dark-mode .doctor-form input::placeholder,
+.dark-mode .doctor-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   SWEETALERT
+===================================================== */
+
+.swal2-container {
+  z-index: 100000 !important;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .page-header-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .page-actions {
+    width: 100%;
+  }
+
+  .search-box {
+    flex: 1;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .page-actions .primary-btn {
+    width: 100%;
+  }
+
+  .doctor-modal-overlay {
+    padding: 12px;
+
+    align-items: center;
+  }
+
+  .doctor-modal {
+    width: 100%;
+
+    max-width: 100%;
+
+    max-height: 95vh;
+
+    border-radius: 12px;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .doctor-form {
+    grid-template-columns: 1fr;
+
+    padding: 18px;
+  }
+
+  .doctor-form .primary-btn {
+    grid-column: auto;
+  }
+
+  .doctor-modal-header {
+    padding: 16px 18px;
+  }
+
+  .doctor-modal-header h2 {
+    font-size: 18px;
+  }
+
+  .table-wrapper table {
+    min-width: 750px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .doctor-form {
+    padding: 14px;
+  }
+
+  .doctor-form input,
+  .doctor-form select,
+  .doctor-form textarea {
+    padding: 11px;
+
+    font-size: 13px;
+  }
+
+  .primary-btn {
+    font-size: 13px;
+  }
+}
+
+
+/* =====================================================
+   TABLE PHOTO THUMBNAIL
+===================================================== */
+
+.doctor-thumb {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.doctor-thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.dark-mode .doctor-thumb {
+  background: #1e293b;
+  color: #93c5fd;
+}
+
+/* =====================================================
+   PHOTO UPLOAD FIELD (inside add/edit form)
+===================================================== */
+
+.photo-upload-field {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding-bottom: 6px;
+}
+
+.photo-upload-preview {
+  width: 64px;
+  height: 64px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  border: 1px solid #dbe2ea;
+
+  background: #f8fafc;
+
+  color: #94a3b8;
+}
+
+.photo-upload-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.photo-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 8px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.photo-upload-btn:hover {
+  background: #dbeafe;
+}
+
+.dark-mode .photo-upload-preview {
+  border-color: #475569;
+  background: #1e293b;
+}
+
+.dark-mode .photo-upload-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #93c5fd;
+}
+
+/* =========================================================
+   DOCTORS PAGE
+   FIXED HEADER + SEARCH
+   SCROLL ONLY TABLE ROWS
+========================================================= */
+
+.page-header-row {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   PAGE ACTIONS
+========================================================= */
+
+.page-actions {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 12px
+    rgba(15, 23, 42, 0.05);
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  min-height: 0;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+   ONLY THIS AREA SCROLLS
+========================================================= */
+
+.table-wrapper {
+  width: 100%;
+
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper table {
+  width: 100%;
+
+  min-width: 800px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+}
+
+/* =========================================================
+   FIXED TABLE HEADER
+========================================================= */
+
+.table-wrapper thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+}
+
+.table-wrapper th {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  text-align: left;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 1px 0 #e5e7eb;
+}
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.table-wrapper tbody {
+  background: #ffffff;
+}
+
+.table-wrapper td {
+  padding: 15px 16px;
+
+  color: #334155;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  background: #ffffff;
+
+  vertical-align: middle;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.table-wrapper tbody tr:hover td {
+  background: #f8fafc;
+}
+
+/* =========================================================
+   LAST ROW
+========================================================= */
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   PAGE HEIGHT
+   This makes only table area scroll.
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .page-header-row {
+    margin-bottom: 20px;
+  }
+
+  .table-card {
+    height: calc(
+      100dvh - 150px
+    );
+  }
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .table-card {
+    height: calc(
+      100dvh - 190px
+    );
+
+    min-height: 0;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .table-card {
+    height: calc(
+      100dvh - 190px
+    );
+
+    min-height: 0;
+  }
+
+  .table-wrapper table {
+    min-width: 750px;
+  }
+
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .table-card {
+    height: calc(
+      100dvh - 205px
+    );
+  }
+
+}

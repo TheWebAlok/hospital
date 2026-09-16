@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+
+  background: #f8fafc;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   DARK BODY
+========================================= */
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+
+/* =========================================
+   REMOVE DEFAULT BUTTON FONT ISSUE
+========================================= */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* =========================================
+   PHARMACY LAYOUT
+========================================= */
+
+.pharmacy-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f6f8fb;
+}
+
+.pharmacy-main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 250px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .pharmacy-main {
+    margin-left: 0;
+    width: 100%;
+  }
+}

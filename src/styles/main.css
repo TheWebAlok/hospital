@@ -1,0 +1,24 @@
+/* * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.main-content {
+  margin-left: 250px;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 72px;
+    padding: 20px;
+  }
+} */

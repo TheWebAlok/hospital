@@ -1,0 +1,1396 @@
+/* =====================================================
+   MEDICARE NAVBAR - CLEAN MODERN VERSION
+===================================================== */
+
+.site-header {
+  --nav-primary: #0f3d3e;
+  --nav-primary-light: #e8f4f1;
+  --nav-accent: #2563eb;
+  --nav-accent-light: #eff6ff;
+
+  --nav-text: #172033;
+  --nav-muted: #64748b;
+
+  --nav-border: #e5e7eb;
+  --nav-bg: #ffffff;
+
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+
+  z-index: 9999;
+
+  background: var(--nav-bg);
+
+  box-shadow: 0 2px 14px rgba(15, 23, 42, 0.05);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.site-header *,
+.site-header *::before,
+.site-header *::after {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.site-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header button {
+  font-family: inherit;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.site-header .container {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 0 auto;
+
+  padding-left: 24px;
+  padding-right: 24px;
+}
+/* =====================================================
+   TOP BAR - PREMIUM
+===================================================== */
+/* =========================================================
+   MEDICAL / HOSPITAL TOP BAR
+========================================================= */
+
+.site-topbar {
+  position: relative;
+  width: 100%;
+
+  background: #0b2942;
+  color: #ffffff;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Prevent any accidental animation */
+  transition: none !important;
+}
+
+/* =========================================================
+   TOP BLUE MEDICAL LINE
+========================================================= */
+
+.site-topbar::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb 0%,
+    #38bdf8 45%,
+    #0ea5e9 100%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   TOPBAR INNER
+========================================================= */
+
+.topbar-inner {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* =========================================================
+   LEFT CONTACT
+========================================================= */
+
+.topbar-contact {
+  display: flex;
+  align-items: center;
+
+  gap: 26px;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   CONTACT ITEMS
+========================================================= */
+
+.topbar-contact a,
+.topbar-contact span {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #e8f1f8;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1;
+  white-space: nowrap;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+/* Email / phone normal hover */
+.topbar-contact a:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   CONTACT ICONS
+========================================================= */
+
+.topbar-contact svg {
+  width: 16px;
+  height: 16px;
+
+  color: #5eb5ff;
+
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   EMERGENCY CONTACT
+   COMPLETELY STATIC - NO HOVER
+========================================================= */
+
+.site-header .emergency-contact,
+.site-header .emergency-contact:hover,
+.site-header .emergency-contact:focus,
+.site-header .emergency-contact:focus-visible,
+.site-header .emergency-contact:active {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-height: 30px;
+
+  padding: 0 14px;
+
+  margin: 0;
+
+  background: rgba(255, 255, 255, 0.08) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+  border-radius: 7px;
+
+  color: #ffffff !important;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.1px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+
+  transition: none !important;
+
+  animation: none !important;
+
+  outline: none !important;
+}
+
+/* =========================================================
+   EMERGENCY BLUE DOT
+========================================================= */
+
+.site-header .emergency-contact::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #38bdf8;
+
+  box-shadow:
+    0 0 0 4px rgba(56, 189, 248, 0.12);
+
+  flex-shrink: 0;
+
+  transition: none !important;
+  transform: none !important;
+}
+
+/* =========================================================
+   EMERGENCY TEXT
+========================================================= */
+
+.site-header .emergency-contact strong {
+  color: #ffffff !important;
+
+  font-weight: 700;
+
+  transition: none !important;
+}
+
+.site-header .emergency-contact span {
+  color: #cbdbea !important;
+
+  font-weight: 500;
+
+  transition: none !important;
+}
+
+/* =========================================================
+   FORCE NO HOVER EFFECT
+========================================================= */
+
+.site-header .emergency-contact:hover::before,
+.site-header .emergency-contact:hover span,
+.site-header .emergency-contact:hover strong {
+  color: inherit !important;
+  background: transparent;
+  transform: none !important;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .topbar-inner {
+    min-height: 40px;
+  }
+
+  .topbar-contact {
+    gap: 18px;
+  }
+
+  .topbar-contact a,
+  .topbar-contact span {
+    font-size: 11px;
+  }
+
+  .site-header .emergency-contact,
+  .site-header .emergency-contact:hover,
+  .site-header .emergency-contact:focus,
+  .site-header .emergency-contact:active {
+    min-height: 29px;
+
+    padding: 0 11px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .topbar-inner {
+    min-height: 38px;
+
+    justify-content: center;
+  }
+
+  .topbar-contact {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 16px;
+  }
+
+  .topbar-contact a,
+  .topbar-contact span {
+    font-size: 10px;
+  }
+
+  .topbar-contact svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .site-header .emergency-contact,
+  .site-header .emergency-contact:hover,
+  .site-header .emergency-contact:focus,
+  .site-header .emergency-contact:active {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .topbar-inner {
+    min-height: 36px;
+  }
+
+  .topbar-contact {
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 8px;
+  }
+
+  .topbar-contact a,
+  .topbar-contact span {
+    font-size: 9.5px;
+  }
+
+  .topbar-contact svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .topbar-contact {
+    gap: 6px;
+  }
+
+  .topbar-contact a,
+  .topbar-contact span {
+    font-size: 9px;
+
+    gap: 5px;
+  }
+}
+/* =====================================================
+   BRANDING
+===================================================== */
+
+.site-branding {
+  position: relative;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.branding-inner {
+  min-height: 78px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.site-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  flex-shrink: 0;
+
+  color: var(--nav-primary);
+}
+
+.site-logo svg {
+  color: var(--nav-accent);
+
+  flex-shrink: 0;
+}
+
+.site-logo h1 {
+  margin: 0;
+
+  color: var(--nav-primary);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.site-logo-subtitle {
+  display: block;
+
+  margin-top: 4px;
+
+  color: var(--nav-muted);
+
+  font-size: 10px;
+
+  letter-spacing: 0.3px;
+}
+
+/* =====================================================
+   MAIN PANEL
+===================================================== */
+
+.nav-main-panel {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.site-nav {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.site-nav > ul {
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-nav > ul > li {
+  position: relative;
+}
+
+.site-nav > ul > li > a,
+.nav-dropdown-trigger {
+  position: relative;
+
+  min-height: 40px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 9px 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--nav-text);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.site-nav > ul > li > a:hover,
+.nav-dropdown-trigger:hover {
+  color: var(--nav-accent);
+}
+
+/* animated underline */
+
+.site-nav > ul > li > a::after,
+.nav-dropdown-trigger::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 3px;
+
+  width: 0;
+  height: 2px;
+
+  border-radius: 2px;
+
+  background: var(--nav-accent);
+
+  transition: width 0.2s ease;
+}
+
+.site-nav > ul > li > a:hover::after,
+.nav-dropdown-trigger:hover::after {
+  width: 100%;
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.nav-dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+
+  left: 50%;
+
+  width: max-content;
+
+  min-width: 220px;
+
+  margin: 0;
+
+  padding: 8px;
+
+  list-style: none;
+
+  transform:
+    translateX(-50%)
+    translateY(5px);
+
+  background: #ffffff;
+
+  border: 1px solid var(--nav-border);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 18px 40px
+    rgba(15, 23, 42, 0.12);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+
+  z-index: 10000;
+}
+
+.nav-dropdown-wrapper:hover > .nav-dropdown {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+.nav-dropdown li a {
+  display: block;
+
+  padding: 10px 12px;
+
+  border-radius: 7px;
+
+  color: var(--nav-text);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-dropdown li a:hover {
+  background: var(--nav-primary-light);
+
+  color: var(--nav-primary);
+}
+
+/* =====================================================
+   DEEP DROPDOWN
+===================================================== */
+
+.deep-dropdown {
+  position: relative;
+}
+
+.deep-dropdown-trigger {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 10px 12px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--nav-text);
+
+  font-size: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.deep-dropdown-trigger:hover {
+  background: var(--nav-primary-light);
+
+  color: var(--nav-primary);
+}
+
+.deep-dropdown-menu {
+  position: absolute;
+
+  top: -8px;
+
+  left: calc(100% + 8px);
+
+  min-width: 190px;
+
+  margin: 0;
+
+  padding: 8px;
+
+  list-style: none;
+
+  background: #ffffff;
+
+  border: 1px solid var(--nav-border);
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 18px 40px
+    rgba(15, 23, 42, 0.12);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transform: translateX(-5px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.deep-dropdown:hover > .deep-dropdown-menu {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+
+  transform: translateX(0);
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.branding-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+.nav-login-btn,
+.nav-dashboard-btn,
+.nav-logout-btn,
+.nav-appointment-btn,
+.nav-order-medicine-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    all 0.2s ease;
+}
+
+/* LOGIN */
+
+.nav-login-btn {
+  background: #ffffff;
+
+  color: var(--nav-primary);
+
+  border: 1px solid var(--nav-border);
+}
+
+.nav-login-btn:hover {
+  background: var(--nav-primary-light);
+
+  border-color: #cfe2dc;
+
+  transform: translateY(-1px);
+}
+
+/* DASHBOARD */
+
+.nav-dashboard-btn {
+  background: var(--nav-accent);
+
+  color: #ffffff;
+
+  border: 1px solid var(--nav-accent);
+}
+
+.nav-dashboard-btn:hover {
+  background: #1d4ed8;
+
+  border-color: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+/* LOGOUT */
+
+.nav-logout-btn {
+  background: #ffffff;
+
+  color: #dc2626;
+
+  border: 1px solid #fecaca;
+}
+
+.nav-logout-btn:hover {
+  background: #fef2f2;
+
+  border-color: #fca5a5;
+}
+
+/* APPOINTMENT */
+
+.nav-appointment-btn {
+  background: #ffffff;
+
+  color: #0f766e;
+
+  border: 1px solid #0f766e;
+
+  box-shadow: 0 3px 10px rgba(15, 118, 110, 0.08);
+}
+
+.nav-appointment-btn:hover {
+  background: #ecfdf5;
+
+  color: #0f766e;
+
+  border-color: #0d9488;
+
+  transform: translateY(-1px);
+}
+
+/* ORDER MEDICINE */
+
+.nav-order-medicine-btn {
+  background: #f0f7ff;
+
+  color: var(--nav-accent);
+
+  border: 1px solid #bfdbfe;
+}
+
+.nav-order-medicine-btn:hover {
+  background: var(--nav-accent-light);
+
+  border-color: #93c5fd;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   MOBILE TOGGLE
+===================================================== */
+
+.mobile-nav-toggle {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--nav-border);
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: var(--nav-primary);
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.mobile-nav-toggle:hover {
+  background: var(--nav-primary-light);
+}
+
+/* =====================================================
+   LARGE LAPTOP
+===================================================== */
+
+@media (max-width: 1300px) {
+
+  .site-header .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .site-nav > ul {
+    gap: 16px;
+  }
+
+  .branding-actions {
+    gap: 5px;
+  }
+
+  .nav-login-btn,
+  .nav-dashboard-btn,
+  .nav-logout-btn,
+  .nav-appointment-btn,
+  .nav-order-medicine-btn {
+    padding: 0 10px;
+
+    font-size: 11px;
+  }
+}
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 960px) {
+
+  /* TOP BAR */
+
+  .topbar-inner {
+    min-height: 34px;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .topbar-contact {
+    gap: 12px;
+
+    font-size: 11px;
+  }
+
+  /* BRANDING */
+
+  .branding-inner {
+    position: relative;
+
+    min-height: 64px;
+
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  /* MOBILE TOGGLE */
+
+  .mobile-nav-toggle {
+    display: flex;
+
+    margin-left: auto;
+  }
+
+  /* MAIN PANEL */
+
+  .nav-main-panel {
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    display: block;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--nav-border);
+
+    box-shadow:
+      0 20px 35px
+      rgba(15, 23, 42, 0.12);
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+      max-height 0.3s ease,
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  .nav-main-panel.is-open {
+    max-height: calc(100dvh - 64px);
+
+    overflow-y: auto;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+  /* NAV */
+
+  .site-nav {
+    display: block;
+
+    width: 100%;
+  }
+
+  .site-nav > ul {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 8px 16px;
+
+    margin: 0;
+
+    list-style: none;
+  }
+
+  .site-nav > ul > li {
+    width: 100%;
+
+    border-bottom: 1px solid #edf0f3;
+  }
+
+  .site-nav > ul > li:last-child {
+    border-bottom: none;
+  }
+
+  .site-nav > ul > li > a,
+  .nav-dropdown-trigger {
+    width: 100%;
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 3px;
+
+    font-size: 14px;
+  }
+
+  .site-nav > ul > li > a::after,
+  .nav-dropdown-trigger::after {
+    display: none;
+  }
+
+  /* MOBILE DROPDOWN */
+
+  .nav-dropdown {
+    position: static;
+
+    width: 100%;
+
+    min-width: 0;
+
+    max-height: 0;
+
+    margin: 0 0 8px;
+
+    padding: 0 7px;
+
+    transform: none;
+
+    overflow: hidden;
+
+    background: var(--nav-primary-light);
+
+    border: none;
+
+    border-radius: 8px;
+
+    box-shadow: none;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .nav-dropdown-wrapper:hover > .nav-dropdown {
+    max-height: 0;
+
+    padding-top: 0;
+
+    padding-bottom: 0;
+
+    transform: none;
+  }
+
+  .nav-dropdown-wrapper
+    > .nav-dropdown.is-open {
+    max-height: 900px;
+
+    padding-top: 7px;
+
+    padding-bottom: 7px;
+  }
+
+  .nav-dropdown li a {
+    min-height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 9px 10px;
+
+    font-size: 13px;
+
+    white-space: normal;
+  }
+
+  /* DEEP DROPDOWN */
+
+  .deep-dropdown-menu {
+    position: static;
+
+    width: 100%;
+
+    min-width: 0;
+
+    max-height: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    transform: none;
+
+    background: rgba(
+      255,
+      255,
+      255,
+      0.65
+    );
+
+    border: none;
+
+    box-shadow: none;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .deep-dropdown:hover
+    > .deep-dropdown-menu {
+    max-height: 0;
+
+    padding: 0;
+  }
+
+  .deep-dropdown
+    > .deep-dropdown-menu.is-open {
+    max-height: 600px;
+
+    padding: 5px;
+  }
+
+  /* ACTIONS */
+
+  .branding-actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+    padding: 12px 16px 16px;
+
+    border-top: 1px solid var(--nav-border);
+
+    background: #ffffff;
+  }
+
+  .nav-login-btn,
+  .nav-dashboard-btn,
+  .nav-logout-btn,
+  .nav-appointment-btn,
+  .nav-order-medicine-btn {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 42px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .site-header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .topbar-contact {
+    font-size: 18px;
+color: white;
+    gap: 8px;
+  }
+
+  .emergency-contact {
+    display: none;
+
+  }
+
+  .branding-inner {
+    min-height: 20px;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .site-logo {
+    gap: 8px;
+  }
+
+  .site-logo svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-logo h1 {
+    font-size: 20px;
+  }
+
+  .site-logo-subtitle {
+    font-size: 8px;
+  }
+
+  .mobile-nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-main-panel.is-open {
+    max-height: calc(100dvh - 60px);
+  }
+
+  .site-nav > ul {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .branding-actions {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    grid-template-columns: 1fr;
+  }
+
+  .nav-login-btn,
+  .nav-dashboard-btn,
+  .nav-logout-btn,
+  .nav-appointment-btn,
+  .nav-order-medicine-btn {
+    min-height: 43px;
+
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .site-logo svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-logo h1 {
+    font-size: 18px;
+  }
+
+  .mobile-nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .site-nav > ul > li > a,
+  .nav-dropdown-trigger {
+    min-height: 42px;
+
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-header *,
+  .site-header *::before,
+  .site-header *::after {
+    transition: none !important;
+  }
+}

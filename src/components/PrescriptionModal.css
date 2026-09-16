@@ -1,0 +1,1347 @@
+/* =========================================================
+   PRESCRIPTION MODAL
+========================================================= */
+
+.rx-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 18px !important;
+
+  background: rgba(15, 23, 42, 0.62) !important;
+  backdrop-filter: blur(4px);
+
+  box-sizing: border-box;
+}
+
+.rx-modal {
+  position: relative;
+
+  width: 97vw !important;
+  max-width: 1480px !important;
+
+  height: 94vh !important;
+  max-height: 920px !important;
+
+  margin: 0 !important;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden !important;
+
+  background: #fff;
+
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.30),
+    0 8px 30px rgba(15, 23, 42, 0.15);
+}
+
+.rx-modal.rx-modal-wide {
+  width: 97vw !important;
+  max-width: 1480px !important;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.rx-modal-header {
+  flex: 0 0 auto;
+
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 18px;
+
+  background: #fff;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  box-sizing: border-box;
+}
+
+.rx-title-wrapper {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.rx-title-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.rx-title-wrapper h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.rx-title-wrapper p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.rx-modal-close {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f1f5f9;
+  color: #64748b;
+
+  cursor: pointer;
+}
+
+.rx-modal-close:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.rx-modal-form {
+  flex: 1 1 auto;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 16px;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  align-content: start;
+
+  gap: 12px;
+
+  background: #f8fafc;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.rx-section {
+  min-width: 0;
+
+  padding: 13px;
+
+  background: #fff;
+
+  border: 1px solid #dce3ec;
+
+  border-radius: 11px;
+
+  box-sizing: border-box;
+}
+
+.rx-section-title {
+  min-height: 27px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 11px;
+
+  color: #172033;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rx-section-icon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.rx-input-group {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.rx-input-group label {
+  min-height: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rx-input-group input,
+.rx-input-group select,
+.rx-section textarea,
+.rx-list-row input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5dce7;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #172033;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+.rx-input-group input,
+.rx-input-group select {
+  height: 38px;
+
+  padding: 0 10px;
+}
+
+.rx-section textarea {
+  min-height: 76px;
+
+  padding: 10px;
+
+  resize: vertical;
+}
+
+.rx-input-group input:focus,
+.rx-input-group select:focus,
+.rx-section textarea:focus,
+.rx-list-row input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.rx-input-group input[readonly] {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* =========================================================
+   PATIENT
+========================================================= */
+
+.rx-patient-section {
+  grid-column: 1 / -1;
+}
+
+.rx-patient-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    .65fr
+    .8fr
+    1fr
+    1.2fr
+    .9fr;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.rx-patient-grid .rx-full {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   DOCTOR
+========================================================= */
+
+.rx-doctor-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(160px, .75fr);
+
+  gap: 9px;
+}
+
+.rx-doctor-grid .rx-full {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   COMPLAINT / INVESTIGATION
+========================================================= */
+
+.rx-list-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-bottom: 8px;
+}
+
+.rx-list-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 35px;
+
+  gap: 7px;
+
+  align-items: center;
+}
+
+.rx-list-row input {
+  height: 38px;
+
+  padding: 0 10px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.rx-add-btn {
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 10px;
+
+  border: 1px dashed #0f766e;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #0f766e;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.rx-add-btn:hover {
+  background: #f0fdfa;
+}
+
+.rx-add-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.rx-remove-btn {
+  width: 35px;
+  height: 35px;
+
+  min-width: 35px;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 7px;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.rx-remove-btn:hover {
+  background: #fee2e2;
+}
+
+/* =========================================================
+   MEDICINE SECTION
+========================================================= */
+
+.rx-medicine-section {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  min-width: 0;
+
+  position: relative;
+
+  overflow: visible !important;
+}
+
+.rx-medicine-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 10px;
+}
+
+.rx-medicine-heading .rx-section-title {
+  margin-bottom: 0;
+}
+
+.rx-medicine-heading .rx-section-title > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rx-medicine-heading small {
+  color: #64748b;
+
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.rx-pharmacy-status {
+  flex-shrink: 0;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   MEDICINE TABLE HEADER
+========================================================= */
+
+.rx-medicine-table-header {
+  width: 100%;
+
+  display: grid !important;
+
+  grid-template-columns:
+    38px
+    minmax(240px, 1.35fr)
+    minmax(140px, .8fr)
+    minmax(140px, .8fr)
+    minmax(190px, 1fr)
+    42px !important;
+
+  grid-template-rows: 24px;
+
+  gap: 8px;
+
+  align-items: center;
+
+  padding: 0 8px;
+
+  box-sizing: border-box;
+
+  color: #475467;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.rx-medicine-table-header span {
+  min-width: 0;
+}
+
+/* =========================================================
+   MEDICINE LIST
+========================================================= */
+
+.rx-medicine-list {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  overflow: visible !important;
+}
+
+/* =========================================================
+   MEDICINE ROW
+========================================================= */
+
+.rx-medicine-row {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  min-height: 54px;
+
+  display: grid !important;
+
+  grid-template-columns:
+    38px
+    minmax(240px, 1.35fr)
+    minmax(140px, .8fr)
+    minmax(140px, .8fr)
+    minmax(190px, 1fr)
+    42px !important;
+
+  grid-template-rows: 38px !important;
+
+  grid-auto-flow: column !important;
+
+  gap: 8px;
+
+  align-items: center;
+
+  padding: 7px 8px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  overflow: visible !important;
+}
+
+/* =========================================================
+   FORCE SIX COLUMNS
+========================================================= */
+
+.rx-medicine-row > .rx-medicine-number {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+.rx-medicine-row > .rx-medicine-search {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+.rx-medicine-row > .rx-medicine-input:nth-of-type(1) {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+}
+
+.rx-medicine-row > .rx-medicine-input:nth-of-type(2) {
+  grid-column: 4 !important;
+  grid-row: 1 !important;
+}
+
+.rx-medicine-row > .rx-medicine-input:nth-of-type(3) {
+  grid-column: 5 !important;
+  grid-row: 1 !important;
+}
+
+.rx-medicine-row > .rx-medicine-delete {
+  grid-column: 6 !important;
+  grid-row: 1 !important;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.rx-medicine-number {
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #475467;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.rx-medicine-search {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  grid-row: 1 !important;
+}
+
+.rx-search-box {
+  width: 100%;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0 9px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  color: #667085;
+}
+
+.rx-search-box:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, .08);
+}
+
+.rx-search-box.selected {
+  border-color: #86efac;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+}
+
+.rx-search-box > svg {
+  flex-shrink: 0;
+}
+
+.rx-search-box input {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 36px !important;
+
+  padding: 0 !important;
+
+  margin: 0 !important;
+
+  border: none !important;
+
+  outline: none !important;
+
+  box-shadow: none !important;
+
+  background: transparent !important;
+
+  color: #101828;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   MEDICINE INPUTS
+========================================================= */
+
+.rx-medicine-input {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 38px !important;
+
+  padding: 0 9px !important;
+
+  margin: 0 !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid #d0d5dd !important;
+
+  border-radius: 7px !important;
+
+  background: #fff !important;
+
+  color: #101828;
+
+  font-size: 12px;
+
+  outline: none !important;
+
+  box-shadow: none !important;
+}
+
+.rx-medicine-input:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, .08) !important;
+}
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.rx-medicine-delete {
+  width: 38px !important;
+
+  height: 38px !important;
+
+  min-width: 38px !important;
+
+  max-width: 38px !important;
+
+  grid-column: 6 !important;
+
+  grid-row: 1 !important;
+
+  justify-self: center !important;
+
+  align-self: center !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+}
+
+/* =========================================================
+   MEDICINE DROPDOWN
+========================================================= */
+
+.rx-medicine-dropdown {
+  position: absolute;
+
+  top: calc(100% + 5px);
+
+  left: 0;
+
+  width: 100%;
+
+  min-width: 320px;
+
+  max-height: 300px;
+
+  overflow-y: auto;
+
+  z-index: 999999;
+
+  padding: 5px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 9px;
+
+  box-shadow:
+    0 12px 30px rgba(16, 24, 40, .16);
+}
+
+.rx-medicine-option {
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 9px 10px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.rx-medicine-option:hover {
+  background: #f2f6ff;
+}
+
+.rx-option-left {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.rx-option-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.rx-option-info {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.rx-option-info strong {
+  overflow: hidden;
+
+  color: #101828;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.rx-option-info small {
+  color: #475467;
+
+  font-size: 10px;
+}
+
+.rx-option-info span {
+  color: #667085;
+
+  font-size: 9px;
+}
+
+.rx-option-stock {
+  flex-shrink: 0;
+
+  min-width: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 1px;
+}
+
+.rx-option-stock small {
+  color: #98a2b3;
+
+  font-size: 8px;
+}
+
+.rx-option-stock strong {
+  color: #027a48;
+
+  font-size: 13px;
+}
+
+.rx-option-stock strong.low {
+  color: #b54708;
+}
+
+.rx-option-stock span {
+  color: #667085;
+
+  font-size: 8px;
+}
+
+.rx-dropdown-message {
+  min-height: 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  color: #667085;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   ADVICE
+========================================================= */
+
+.rx-advice-section {
+  grid-column: 1 / -1;
+}
+
+.rx-advice-section textarea {
+  width: 100%;
+
+  min-height: 78px;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.rx-form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.rx-cancel-btn {
+  min-width: 88px;
+
+  height: 42px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 16px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #fff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.primary-btn:disabled {
+  opacity: .6;
+
+  cursor: not-allowed;
+}
+
+.rx-save-btn {
+  min-width: 205px;
+}
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.rx-preview-actions {
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 10px 16px;
+
+  background: #fff;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rx-preview-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow: auto;
+
+  padding: 25px;
+
+  background: #e5e7eb;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.rx-modal-form::-webkit-scrollbar,
+.rx-preview-scroll::-webkit-scrollbar,
+.rx-medicine-dropdown::-webkit-scrollbar {
+  width: 7px;
+}
+
+.rx-modal-form::-webkit-scrollbar-track,
+.rx-preview-scroll::-webkit-scrollbar-track,
+.rx-medicine-dropdown::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.rx-modal-form::-webkit-scrollbar-thumb,
+.rx-preview-scroll::-webkit-scrollbar-thumb,
+.rx-medicine-dropdown::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .rx-medicine-table-header {
+    display: none !important;
+  }
+
+  .rx-medicine-row {
+    grid-template-columns:
+      35px
+      minmax(220px, 1fr)
+      minmax(130px, .8fr)
+      minmax(130px, .8fr)
+      minmax(180px, 1fr)
+      40px !important;
+
+    grid-template-rows: 38px !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-number {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-search {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(1) {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(2) {
+    grid-column: 4 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(3) {
+    grid-column: 5 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-delete {
+    grid-column: 6 !important;
+    grid-row: 1 !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .rx-modal-form {
+    grid-template-columns: 1fr;
+  }
+
+  .rx-section,
+  .rx-medicine-section,
+  .rx-advice-section,
+  .rx-form-actions {
+    grid-column: 1 / -1;
+  }
+
+  .rx-patient-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rx-doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+     On mobile, medicine becomes stacked.
+  */
+
+  .rx-medicine-table-header {
+    display: none !important;
+  }
+
+  .rx-medicine-row {
+    display: grid !important;
+
+    grid-template-columns:
+      32px
+      minmax(0, 1fr)
+      40px !important;
+
+    grid-template-rows:
+      38px
+      38px
+      38px
+      38px !important;
+
+    gap: 7px;
+
+    padding: 8px;
+  }
+
+  .rx-medicine-row > .rx-medicine-number {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-search {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(1) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(2) {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-input:nth-of-type(3) {
+    grid-column: 2 !important;
+    grid-row: 4 !important;
+  }
+
+  .rx-medicine-row > .rx-medicine-delete {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .rx-modal-overlay {
+    padding: 0 !important;
+  }
+
+  .rx-modal {
+    width: 100vw !important;
+    height: 100vh !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    border-radius: 0 !important;
+  }
+
+  .rx-modal-form {
+    padding: 10px;
+  }
+
+  .rx-patient-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rx-patient-grid .rx-full {
+    grid-column: auto;
+  }
+
+  .rx-medicine-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .rx-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .rx-cancel-btn,
+  .rx-save-btn {
+    width: 100%;
+  }
+
+  .rx-preview-scroll {
+    padding: 10px;
+  }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .rx-pad,
+  .rx-pad * {
+    visibility: visible !important;
+  }
+
+  .rx-pad {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 210mm !important;
+
+    min-height: 297mm !important;
+
+    margin: 0 !important;
+
+    box-shadow: none !important;
+  }
+}

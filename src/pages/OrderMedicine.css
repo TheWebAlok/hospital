@@ -1,0 +1,822 @@
+/* =========================================================
+   ORDER MEDICINE PAGE
+========================================================= */
+
+.order-medicine-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 24px;
+
+  background: #f5f8fc;
+
+  box-sizing: border-box;
+
+  color: #17233c;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.order-page-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.order-small-title {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #243f8f;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.order-page-header h1 {
+  margin: 0;
+
+  color: #172f75;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+.order-page-header p {
+  margin: 6px 0 0;
+
+  color: #687893;
+
+  font-size: 14px;
+}
+
+.order-header-icon {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #e9f0ff;
+
+  color: #243f8f;
+}
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.order-message {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 12px 15px;
+
+  margin-bottom: 18px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.order-error {
+  background: #fff0f0;
+
+  border: 1px solid #f0b9b9;
+
+  color: #bb3030;
+}
+
+.order-success {
+  background: #effbf3;
+
+  border: 1px solid #bce7c8;
+
+  color: #19863d;
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.order-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(320px, 0.9fr);
+
+  gap: 22px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.order-search-box {
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  margin-bottom: 16px;
+
+  border: 1px solid #d7dfeb;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 7px
+    rgba(31, 51, 84, 0.04);
+}
+
+.order-search-box svg {
+  color: #687893;
+
+  flex-shrink: 0;
+}
+
+.order-search-box input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #17233c;
+
+  font-size: 14px;
+}
+
+.order-search-box input::placeholder {
+  color: #9aa8bc;
+}
+
+/* =========================================================
+   MEDICINES
+========================================================= */
+
+.medicine-order-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.medicine-order-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  border: 1px solid #dce3ed;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 10px
+    rgba(31, 51, 84, 0.04);
+}
+
+.medicine-order-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eef3ff;
+
+  color: #294998;
+}
+
+.medicine-order-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.medicine-order-info h3 {
+  margin: 0;
+
+  color: #22375e;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.medicine-order-info p {
+  margin: 3px 0 5px;
+
+  color: #79879b;
+
+  font-size: 11px;
+}
+
+.medicine-price {
+  margin-bottom: 4px;
+
+  color: #172f75;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.stock-available,
+.stock-out {
+  display: inline-block;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.stock-available {
+  color: #16833b;
+}
+
+.stock-out {
+  color: #c43333;
+}
+
+.add-order-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  min-width: 72px;
+
+  padding: 9px 12px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #243f8f;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.add-order-btn:hover {
+  background: #193477;
+}
+
+.add-order-btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.order-empty {
+  padding: 60px 20px;
+
+  margin-top: 14px;
+
+  text-align: center;
+
+  border: 1px dashed #cbd5e3;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #77869b;
+}
+
+.order-empty svg {
+  color: #9ba8ba;
+}
+
+.order-empty h3 {
+  margin: 10px 0 4px;
+
+  color: #334767;
+}
+
+.order-empty p {
+  margin: 0;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.order-right {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.order-card {
+  padding: 18px;
+
+  border: 1px solid #dce3ed;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 3px 10px
+    rgba(31, 51, 84, 0.04);
+}
+
+.order-card-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.order-card-title h2 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0;
+
+  color: #22375e;
+
+  font-size: 16px;
+}
+
+.order-card-title h2 svg {
+  color: #243f8f;
+}
+
+.order-card-title span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8895a9;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-empty {
+  padding: 28px 10px;
+
+  text-align: center;
+
+  color: #8c99ad;
+}
+
+.cart-empty p {
+  margin: 8px 0 0;
+
+  font-size: 13px;
+}
+
+.cart-items {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.cart-item > div:first-child {
+  min-width: 0;
+}
+
+.cart-item strong {
+  display: block;
+
+  color: #253a60;
+
+  font-size: 13px;
+}
+
+.cart-item small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #7f8ca0;
+
+  font-size: 11px;
+}
+
+.cart-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.cart-actions button {
+  width: 27px;
+  height: 27px;
+
+  padding: 0;
+
+  border: 1px solid #d7dfeb;
+
+  border-radius: 6px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #364867;
+
+  cursor: pointer;
+}
+
+.cart-actions button:hover {
+  background: #f3f6fa;
+}
+
+.cart-actions button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+.cart-actions span {
+  min-width: 20px;
+
+  text-align: center;
+
+  color: #23385b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.cart-actions .cart-remove {
+  margin-left: 4px;
+
+  border-color: #f0caca;
+
+  color: #c13b3b;
+}
+
+.order-total {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 9px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #dfe5ee;
+}
+
+.order-total span {
+  color: #6c7b91;
+
+  font-size: 13px;
+}
+
+.order-total strong {
+  color: #172f75;
+
+  font-size: 18px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.order-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+.order-field {
+  min-width: 0;
+}
+
+.order-field.full {
+  grid-column: 1 / -1;
+}
+
+.order-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #44546e;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.order-field input,
+.order-field textarea,
+.order-field select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5deea;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #233653;
+
+  font-family: inherit;
+
+  font-size: 13px;
+}
+
+.order-field input,
+.order-field select {
+  height: 40px;
+
+  padding: 0 11px;
+}
+
+.order-field textarea {
+  padding: 10px 11px;
+
+  resize: vertical;
+
+  min-height: 76px;
+}
+
+.order-field input:focus,
+.order-field textarea:focus,
+.order-field select:focus {
+  border-color: #5873b9;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(36, 63, 143, 0.08);
+}
+
+.order-input-icon {
+  position: relative;
+}
+
+.order-input-icon svg {
+  position: absolute;
+
+  left: 11px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: #8794a8;
+
+  z-index: 1;
+}
+
+.order-input-icon input {
+  padding-left: 35px;
+}
+
+.order-input-icon textarea {
+  padding-left: 35px;
+}
+
+.place-order-btn {
+  width: 100%;
+
+  height: 46px;
+
+  margin-top: 17px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  background: #243f8f;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+.place-order-btn:hover {
+  background: #193477;
+}
+
+.place-order-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.order-loading {
+  min-height: 60vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #61718b;
+}
+
+.order-loading p {
+  margin-top: 10px;
+
+  font-size: 14px;
+}
+
+.order-spin {
+  animation:
+    orderSpin 1s linear infinite;
+}
+
+@keyframes orderSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .order-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-order-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .order-medicine-page {
+    padding: 14px;
+  }
+
+  .order-page-header {
+    align-items: flex-start;
+  }
+
+  .order-page-header h1 {
+    font-size: 24px;
+  }
+
+  .order-header-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .medicine-order-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-field.full {
+    grid-column: auto;
+  }
+
+}

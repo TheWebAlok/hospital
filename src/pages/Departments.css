@@ -1,0 +1,558 @@
+css
+/* ================================
+   DEPARTMENTS PAGE
+================================ */
+
+.departments-page {
+  background: #ffffff;
+  margin-top: -100px;
+}
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+.departments-page .page-title {
+  background: #f8fbff;
+}
+
+.departments-page .page-title .heading {
+  padding: 80px 0 50px;
+}
+
+.departments-page .heading-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.departments-page .page-title p {
+  color: #6c757d;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* ================================
+   BREADCRUMBS
+================================ */
+
+.departments-page .breadcrumbs {
+  padding: 18px 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.departments-page .breadcrumbs ol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.departments-page .breadcrumbs li {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.departments-page .breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 10px;
+  color: #adb5bd;
+}
+
+.departments-page .breadcrumbs a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.departments-page .breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   COMMON SECTION
+================================ */
+
+.departments-page .section {
+  padding: 80px 0;
+}
+
+/* ================================
+   DEPARTMENT TABS
+================================ */
+
+.departments-page .departments-tabs {
+  background: #ffffff;
+}
+
+.departments-page .medical-specialties {
+  width: 100%;
+}
+
+.departments-page .specialty-navigation {
+  margin-bottom: 40px;
+}
+
+.departments-page .department-tab-list {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Tab Button */
+
+.departments-page .department-tab {
+  border: 1px solid #dce8f5;
+  background: #f8fbff;
+  color: #495057;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.departments-page .department-tab:hover {
+  color: #0d6efd;
+  border-color: #0d6efd;
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.departments-page .department-tab.active {
+  background: #0d6efd;
+  color: #ffffff;
+  border-color: #0d6efd;
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
+}
+
+/* ================================
+   TAB CONTENT
+================================ */
+
+.departments-page .department-content {
+  padding: 45px;
+  background: #ffffff;
+  border: 1px solid #e7eef6;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(31, 58, 85, 0.08);
+  animation: departmentFade 0.35s ease;
+}
+
+@keyframes departmentFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   TAB IMAGE
+================================ */
+
+.departments-page .department-layout {
+  min-height: 380px;
+}
+
+.departments-page .department-image {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.departments-page .department-image img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.departments-page .department-image:hover img {
+  transform: scale(1.04);
+}
+
+/* ================================
+   DEPARTMENT INFORMATION
+================================ */
+
+.departments-page .department-info {
+  padding-right: 25px;
+}
+
+.departments-page .department-title {
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 18px;
+}
+
+.departments-page .department-description {
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* ================================
+   SERVICES
+================================ */
+
+.departments-page .service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 0;
+}
+
+.departments-page .service-icon {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: #eaf3ff;
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.departments-page .service-item:hover .service-icon {
+  background: #0d6efd;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.departments-page .service-content h4 {
+  font-size: 17px;
+  font-weight: 650;
+  margin: 0 0 6px;
+  color: #212529;
+}
+
+.departments-page .service-content p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================================
+   ALL DEPARTMENTS SECTION
+================================ */
+
+.departments-page .departments {
+  background: #f8fbff;
+}
+
+.departments-page .section-heading {
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.departments-page .section-heading h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.departments-page .section-heading p {
+  color: #6c757d;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ================================
+   DEPARTMENT CARD
+================================ */
+
+.departments-page .department-card {
+  height: 100%;
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5edf5;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(31, 58, 85, 0.06);
+  transition: all 0.35s ease;
+}
+
+.departments-page .department-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(31, 58, 85, 0.12);
+}
+
+/* ================================
+   CARD ICON
+================================ */
+
+.departments-page .department-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #0d6efd;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.3s ease;
+}
+
+.departments-page .department-card:hover .department-icon {
+  background: #0d6efd;
+  color: #ffffff;
+  transform: rotate(5deg) scale(1.05);
+}
+
+/* ================================
+   CARD IMAGE
+================================ */
+
+.departments-page .department-card .department-image {
+  border-radius: 0;
+}
+
+.departments-page .department-card .department-image img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================================
+   CARD CONTENT
+================================ */
+
+.departments-page .department-content {
+  border: 0;
+  box-shadow: none;
+  padding: 28px;
+  border-radius: 0;
+  background: #ffffff;
+  animation: none;
+}
+
+.departments-page .department-card .department-content h3 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.departments-page .department-card .department-content p {
+  color: #6c757d;
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+/* ================================
+   LEARN MORE
+================================ */
+
+.departments-page .learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #0d6efd;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.departments-page .learn-more svg {
+  transition: transform 0.3s ease;
+}
+
+.departments-page .learn-more:hover {
+  color: #084298;
+}
+
+.departments-page .learn-more:hover svg {
+  transform: translateX(5px);
+}
+
+/* ================================
+   RESPONSIVE - TABLET
+================================ */
+
+@media (max-width: 991px) {
+  .departments-page .page-title .heading {
+    padding: 65px 0 40px;
+  }
+
+  .departments-page .heading-title {
+    font-size: 40px;
+  }
+
+  .departments-page .section {
+    padding: 65px 0;
+  }
+
+  .departments-page .department-content {
+    padding: 35px;
+  }
+
+  .departments-page .department-info {
+    padding-right: 0;
+    margin-bottom: 35px;
+  }
+
+  .departments-page .department-title {
+    font-size: 30px;
+  }
+
+  .departments-page .department-image img {
+    height: 320px;
+  }
+
+  .departments-page .department-tab {
+    padding: 12px 20px;
+  }
+}
+
+/* ================================
+   RESPONSIVE - MOBILE
+================================ */
+
+@media (max-width: 767px) {
+  .departments-page .page-title .heading {
+    padding: 50px 20px 30px;
+  }
+
+  .departments-page .heading-title {
+    font-size: 34px;
+  }
+
+  .departments-page .page-title p {
+    font-size: 14px;
+  }
+
+  .departments-page .section {
+    padding: 55px 0;
+  }
+
+  .departments-page .department-tab-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .departments-page .department-tab {
+    width: 100%;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .departments-page .department-content {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .departments-page .department-title {
+    font-size: 27px;
+  }
+
+  .departments-page .department-description {
+    font-size: 14px;
+  }
+
+  .departments-page .department-image img {
+    height: 260px;
+  }
+
+  .departments-page .service-item {
+    padding: 14px 0;
+  }
+
+  .departments-page .service-icon {
+    flex: 0 0 45px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .departments-page .service-content h4 {
+    font-size: 16px;
+  }
+
+  .departments-page .service-content p {
+    font-size: 13px;
+  }
+
+  .departments-page .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .departments-page .section-heading h2 {
+    font-size: 30px;
+  }
+
+  .departments-page .department-card .department-content {
+    padding: 23px;
+  }
+}
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+  .departments-page .heading-title {
+    font-size: 30px;
+  }
+
+  .departments-page .department-tab-list {
+    grid-template-columns: 1fr;
+  }
+
+  .departments-page .department-content {
+    padding: 20px 15px;
+  }
+
+  .departments-page .department-title {
+    font-size: 25px;
+  }
+
+  .departments-page .department-image img {
+    height: 230px;
+  }
+
+  .departments-page .department-icon {
+    width: 48px;
+    height: 48px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .departments-page .department-card .department-content h3 {
+    font-size: 21px;
+  }
+}
+

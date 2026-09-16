@@ -1,0 +1,137 @@
+/* Login.css */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(160deg, #0b3ea8 0%, #1b56fd 45%, #4f7fff 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 36px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(11, 62, 168, 0.25);
+}
+
+.login-logo {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1b56fd, #4f7fff);
+  box-shadow: 0 10px 20px rgba(27, 86, 253, 0.35);
+}
+
+.login-card h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f1b3d;
+  margin: 0 0 6px;
+}
+
+.login-card p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 28px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e2e6f0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #f8f9fc;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group:focus-within {
+  border-color: #1b56fd;
+  box-shadow: 0 0 0 3px rgba(27, 86, 253, 0.15);
+  background: #ffffff;
+}
+
+.input-group svg {
+  color: #8a93a8;
+  flex-shrink: 0;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0f1b3d;
+}
+
+.input-group input::placeholder {
+  color: #9aa2b1;
+}
+
+.password-toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #8a93a8;
+  padding: 0;
+}
+
+.password-toggle:hover {
+  color: #1b56fd;
+}
+
+.login-btn {
+  margin-top: 6px;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #1b56fd;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #0b3ea8;
+}
+
+.login-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-btn:disabled {
+  background: #a9bdfd;
+  cursor: not-allowed;
+}
+.input-group:focus-within {
+  border-color: #e825eb;
+}
+/* Small screens */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 32px 24px;
+  }
+}

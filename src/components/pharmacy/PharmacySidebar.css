@@ -1,0 +1,339 @@
+/* =====================================================
+   PHARMACY SIDEBAR
+===================================================== */
+
+.pharmacy-sidebar {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 250px !important;
+  min-width: 250px !important;
+
+  height: 100dvh !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  box-sizing: border-box;
+
+  padding: 18px 10px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e5e7eb;
+
+  z-index: 9500 !important;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transform: translateX(0);
+
+  transition: transform 0.25s ease;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.pharmacy-sidebar-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 8px 18px;
+
+  border-bottom: 1px solid #eef1f5;
+
+  flex-shrink: 0;
+}
+
+.pharmacy-sidebar-brand {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.pharmacy-brand-icon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #1769e0;
+
+  color: #ffffff;
+}
+
+.pharmacy-brand-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pharmacy-brand-text strong {
+  color: #172033;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.pharmacy-brand-text span {
+  margin-top: 2px;
+
+  color: #7b8494;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.pharmacy-close-btn {
+  display: none;
+
+  width: 34px;
+  height: 34px;
+
+  margin-left: auto;
+
+  padding: 0;
+
+  flex-shrink: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  cursor: pointer;
+}
+
+.pharmacy-close-btn:hover {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.pharmacy-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding-top: 18px;
+}
+
+.pharmacy-nav-title {
+  padding: 0 10px 8px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+/* =====================================================
+   MENU ITEMS
+===================================================== */
+
+.pharmacy-menu-item {
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 11px;
+
+  box-sizing: border-box;
+
+  border-left: 3px solid transparent;
+
+  border-radius: 8px;
+
+  color: #475569;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+  font-weight: 500;
+}
+
+.pharmacy-menu-item:hover {
+  background: #eff6ff;
+
+  color: #1769e0;
+}
+
+.pharmacy-menu-item.active {
+  background: #eaf2ff;
+
+  color: #1769e0;
+
+  border-left-color: #1769e0;
+
+  font-weight: 600;
+}
+
+.pharmacy-menu-item svg {
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.pharmacy-sidebar-bottom {
+  margin-top: auto;
+
+  padding-top: 15px;
+}
+
+.pharmacy-sidebar-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px;
+
+  border-radius: 9px;
+
+  background: #f8fafc;
+
+  color: #1769e0;
+}
+
+.pharmacy-sidebar-footer > svg {
+  flex-shrink: 0;
+}
+
+.pharmacy-sidebar-footer > div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.pharmacy-sidebar-footer strong {
+  color: #334155;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+.pharmacy-sidebar-footer span {
+  margin-top: 2px;
+
+  color: #94a3b8;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   MOBILE DRAWER
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .pharmacy-sidebar {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 250px !important;
+    min-width: 250px !important;
+
+    height: 100dvh !important;
+
+    transform: translateX(-105%) !important;
+
+    z-index: 9999 !important;
+
+    box-shadow: none;
+  }
+
+  .pharmacy-sidebar.pharmacy-sidebar-open {
+    transform: translateX(0) !important;
+
+    box-shadow:
+      8px 0 30px rgba(15, 23, 42, 0.18);
+  }
+
+  .pharmacy-close-btn {
+    display: flex;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .pharmacy-sidebar {
+    width: 240px !important;
+    min-width: 240px !important;
+  }
+
+  .pharmacy-brand-icon {
+    width: 35px;
+    height: 35px;
+
+    min-width: 35px;
+  }
+
+  .pharmacy-brand-text strong {
+    font-size: 14px;
+  }
+
+  .pharmacy-brand-text span {
+    font-size: 9px;
+  }
+}

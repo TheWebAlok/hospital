@@ -1,0 +1,685 @@
+/* =====================================================
+   PRESCRIPTION PAD
+   SCREEN + A4 PRINT
+===================================================== */
+
+.rx-pad {
+  width: 100%;
+  max-width: 210mm;
+
+  margin: 0 auto;
+  padding: 22px 24px;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 4px 24px rgba(15, 23, 42, 0.12);
+
+  border: 1px solid #dbe3ef;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.rx-header {
+  border-bottom: 3px solid #1e3a8a;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.rx-header-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 9px;
+}
+
+.rx-logo {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1e3a8a;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.rx-logo-img {
+  width: 58px;
+  height: 58px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+}
+
+.rx-clinic-info {
+  min-width: 0;
+}
+
+.rx-clinic-info h1 {
+  margin: 0;
+
+  color: #1e3a8a;
+
+  font-size: 28px;
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  letter-spacing: 0.2px;
+}
+
+.rx-clinic-info p {
+  margin: 2px 0 0;
+
+  color: #475569;
+
+  font-size: 11px;
+}
+
+.rx-doctors-bar {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 8px;
+
+  padding: 7px 10px;
+
+  background: #f1f5f9;
+
+  border-radius: 5px;
+}
+
+.rx-doctor {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  font-size: 9px;
+
+  color: #475569;
+}
+
+.rx-doctor strong {
+  color: #0f172a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   PATIENT INFORMATION
+===================================================== */
+
+.rx-patient-box {
+  border: 1px solid #cbd5e1;
+
+  border-radius: 5px;
+
+  padding: 9px 12px;
+
+  margin-bottom: 12px;
+
+  background: #ffffff;
+}
+
+.rx-patient-box h3 {
+  margin: 0 0 7px;
+
+  font-size: 11px;
+
+  color: #0f172a;
+
+  text-decoration: underline;
+}
+
+.rx-patient-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px 24px;
+
+  font-size: 10.5px;
+
+  color: #1e293b;
+
+  margin-bottom: 3px;
+}
+
+.rx-patient-row:last-child {
+  margin-bottom: 0;
+}
+
+.rx-date {
+  margin-left: auto;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.rx-body {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.45fr;
+
+  gap: 14px;
+
+  align-items: start;
+}
+
+.rx-left {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.rx-box {
+  border: 1px solid #94a3b8;
+
+  border-radius: 4px;
+
+  padding: 8px 9px;
+
+  min-height: 70px;
+
+  box-sizing: border-box;
+}
+
+.rx-box-title {
+  font-size: 10px;
+
+  font-weight: 800;
+
+  color: #1e3a8a;
+
+  margin-bottom: 5px;
+}
+
+.rx-investigation-box {
+  border: 2px solid #1e3a8a;
+
+  min-height: 100px;
+}
+
+.rx-box ul {
+  margin: 0;
+
+  padding-left: 15px;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  color: #1e293b;
+
+  word-break: break-word;
+}
+
+.rx-empty {
+  color: #94a3b8;
+
+  list-style: none;
+
+  margin-left: -15px;
+}
+
+/* =====================================================
+   RIGHT RX
+===================================================== */
+
+.rx-right {
+  min-width: 0;
+
+  border-left: 2px dashed #cbd5e1;
+
+  padding-left: 14px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.rx-symbol {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #1e3a8a;
+
+  font-style: italic;
+
+  margin-bottom: 7px;
+}
+
+.rx-medicine-list {
+  margin: 0;
+
+  padding-left: 20px;
+
+  font-size: 11px;
+
+  color: #0f172a;
+}
+
+.rx-medicine-list li {
+  margin-bottom: 10px;
+
+  padding-left: 2px;
+
+  word-break: break-word;
+}
+
+.rx-med-name {
+  display: block;
+
+  font-weight: 700;
+
+  font-size: 11px;
+}
+
+.rx-med-detail {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #475569;
+
+  font-size: 9.5px;
+}
+
+.rx-advice {
+  margin-top: 8px;
+
+  padding-top: 8px;
+
+  border-top: 1px dashed #cbd5e1;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #334155;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.rx-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  padding-top: 8px;
+
+  border-top: 1px solid #cbd5e1;
+
+  font-size: 9px;
+
+  color: #64748b;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  .rx-body {
+    grid-template-columns: 1fr;
+  }
+
+  .rx-right {
+    border-left: none;
+
+    border-top: 2px dashed #cbd5e1;
+
+    padding-left: 0;
+
+    padding-top: 12px;
+  }
+
+  .rx-date {
+    margin-left: 0;
+  }
+
+  .rx-doctors-bar {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+  /* -----------------------------------------------
+     A4
+  ----------------------------------------------- */
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    min-width: 210mm;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: white !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* -----------------------------------------------
+     HIDE EVERYTHING
+  ----------------------------------------------- */
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* -----------------------------------------------
+     SHOW ONLY PRESCRIPTION
+  ----------------------------------------------- */
+
+  .rx-pad,
+  .rx-pad * {
+    visibility: visible !important;
+  }
+
+  /* -----------------------------------------------
+     A4 PAGE
+  ----------------------------------------------- */
+
+  .rx-pad {
+    position: absolute !important;
+
+    top: 8mm !important;
+    left: 8mm !important;
+
+    width: 194mm !important;
+    height: 281mm !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 12mm 10mm 16mm !important;
+
+    box-sizing: border-box !important;
+
+    background: #ffffff !important;
+
+    box-shadow: none !important;
+
+    border: 1.2px solid #1e3a8a !important;
+
+    overflow: hidden !important;
+
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    page-break-inside: avoid !important;
+
+    break-inside: avoid !important;
+
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* -----------------------------------------------
+     HEADER
+  ----------------------------------------------- */
+
+  .rx-header {
+    margin-bottom: 10px !important;
+
+    padding-bottom: 8px !important;
+  }
+
+  .rx-header-top {
+    gap: 12px !important;
+
+    margin-bottom: 7px !important;
+  }
+
+  .rx-logo {
+    width: 52px !important;
+    height: 52px !important;
+
+    font-size: 13px !important;
+  }
+
+  .rx-logo-img {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .rx-clinic-info h1 {
+    font-size: 25px !important;
+  }
+
+  .rx-clinic-info p {
+    font-size: 9px !important;
+  }
+
+  .rx-doctors-bar {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(3, 1fr) !important;
+
+    padding: 6px 8px !important;
+
+    gap: 6px !important;
+
+    border-radius: 3px !important;
+  }
+
+  .rx-doctor {
+    font-size: 8px !important;
+  }
+
+  .rx-doctor strong {
+    font-size: 9px !important;
+  }
+
+  /* -----------------------------------------------
+     PATIENT
+  ----------------------------------------------- */
+
+  .rx-patient-box {
+    padding: 7px 9px !important;
+
+    margin-bottom: 10px !important;
+
+    border-radius: 3px !important;
+  }
+
+  .rx-patient-box h3 {
+    font-size: 9.5px !important;
+
+    margin-bottom: 5px !important;
+  }
+
+  .rx-patient-row {
+    font-size: 9px !important;
+
+    gap: 4px 18px !important;
+
+    margin-bottom: 2px !important;
+  }
+
+  /* -----------------------------------------------
+     BODY
+  ----------------------------------------------- */
+
+  .rx-body {
+    display: grid !important;
+
+    grid-template-columns:
+      1fr 1.45fr !important;
+
+    gap: 10px !important;
+
+    align-items: start !important;
+  }
+
+  .rx-left {
+    gap: 8px !important;
+
+    height: auto !important;
+  }
+
+  .rx-box {
+    min-height: 55px !important;
+
+    padding: 6px 8px !important;
+
+    border-radius: 3px !important;
+  }
+
+  .rx-box-title {
+    font-size: 9px !important;
+
+    margin-bottom: 4px !important;
+  }
+
+  .rx-box ul {
+    font-size: 8.8px !important;
+
+    line-height: 1.5 !important;
+
+    padding-left: 13px !important;
+  }
+
+  .rx-empty {
+    margin-left: -13px !important;
+  }
+
+  .rx-investigation-box {
+    min-height: 80px !important;
+
+    border-width: 1.5px !important;
+  }
+
+  /* -----------------------------------------------
+     RX
+  ----------------------------------------------- */
+
+  .rx-right {
+    border-left: 1.5px dashed #cbd5e1 !important;
+
+    border-top: none !important;
+
+    padding-left: 12px !important;
+
+    padding-top: 0 !important;
+  }
+
+  .rx-symbol {
+    font-size: 29px !important;
+
+    margin-bottom: 5px !important;
+  }
+
+  .rx-medicine-list {
+    font-size: 10px !important;
+
+    padding-left: 18px !important;
+  }
+
+  .rx-medicine-list li {
+    margin-bottom: 8px !important;
+  }
+
+  .rx-med-name {
+    font-size: 10px !important;
+  }
+
+  .rx-med-detail {
+    font-size: 8.5px !important;
+
+    margin-top: 1px !important;
+  }
+
+  .rx-advice {
+    margin-top: 7px !important;
+
+    padding-top: 7px !important;
+
+    font-size: 8.8px !important;
+  }
+
+  /* -----------------------------------------------
+     FOOTER
+  ----------------------------------------------- */
+
+  .rx-footer {
+    position: absolute !important;
+
+    left: 10mm !important;
+    right: 10mm !important;
+
+    bottom: 7mm !important;
+
+    margin: 0 !important;
+
+    padding-top: 7px !important;
+
+    background: #ffffff !important;
+
+    font-size: 8px !important;
+  }
+}

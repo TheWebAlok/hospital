@@ -1,0 +1,312 @@
+/* =====================================================
+   ADMIN LAYOUT
+===================================================== */
+
+.app-layout {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+
+  display: flex;
+
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+.app-layout.light-mode {
+  --bg-color: #f8fafc;
+  --text-color: #1e293b;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.app-layout.dark-mode {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+  flex: 1 1 auto;
+
+  width: auto;
+
+  min-width: 0;
+  min-height: 0;
+
+  height: 100dvh;
+
+  margin-left: 280px;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  overflow: hidden;
+
+  transition:
+    margin-left 0.3s ease,
+    width 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* =====================================================
+   DASHBOARD / PAGE CONTENT
+===================================================== */
+
+.main-content > * {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* =====================================================
+   MOBILE HEADER
+===================================================== */
+
+.mobile-header {
+  display: none;
+}
+
+/* =====================================================
+   SIDEBAR OVERLAY
+===================================================== */
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .main-content {
+    margin-left: 240px;
+
+    height: 100dvh;
+
+    padding: 25px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .app-layout {
+    display: block;
+
+    width: 100%;
+    height: 100dvh;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  /* -------------------------
+     MOBILE HEADER
+  ------------------------- */
+
+  .mobile-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    z-index: 900;
+  }
+
+  .dark-mode .mobile-header {
+    background: #111827;
+
+    border-bottom-color: #334155;
+  }
+
+  .mobile-menu-btn {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    cursor: pointer;
+  }
+
+  .dark-mode .mobile-menu-btn {
+    background: #1e293b;
+
+    color: #60a5fa;
+  }
+
+  .mobile-logo {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #2563eb;
+  }
+
+  /* -------------------------
+     MAIN
+  ------------------------- */
+
+  .main-content {
+    width: 100%;
+
+    height: 100dvh;
+    min-height: 0;
+
+    margin-left: 0;
+
+    box-sizing: border-box;
+
+    padding: 80px 20px 25px;
+
+    overflow: hidden;
+  }
+
+  /* -------------------------
+     SIDEBAR
+  ------------------------- */
+
+  .app-layout .sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 280px;
+    min-width: 280px;
+
+    height: 100vh;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.3s ease;
+
+    z-index: 1100;
+  }
+
+  .app-layout .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* -------------------------
+     OVERLAY
+  ------------------------- */
+
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 1050;
+  }
+
+  /* -------------------------
+     CLOSE BUTTON
+  ------------------------- */
+
+  .sidebar-close-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    cursor: pointer;
+  }
+
+  .dark-mode .sidebar-close-btn {
+    background: #1e293b;
+
+    color: #e2e8f0;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .main-content {
+    width: 100%;
+
+    height: 100dvh;
+    min-height: 0;
+
+    padding: 75px 15px 20px;
+
+    overflow: hidden;
+  }
+
+  .app-layout .sidebar {
+    width: 270px;
+    min-width: 270px;
+  }
+}

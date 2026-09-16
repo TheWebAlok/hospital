@@ -1,0 +1,253 @@
+/* =====================================================
+   PHARMACY LAYOUT
+===================================================== */
+
+.pharmacy-layout {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+
+  position: relative;
+
+  display: flex;
+
+  overflow: hidden;
+
+  background: #f5f7fb;
+}
+
+/* =====================================================
+   MOBILE HEADER
+===================================================== */
+
+.pharmacy-mobile-header {
+  display: none;
+}
+
+.pharmacy-mobile-title {
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   MENU BUTTON
+===================================================== */
+
+.pharmacy-menu-btn {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #dbe4f0;
+  border-radius: 7px;
+
+  background: #f8fbff;
+  color: #1769e0;
+
+  cursor: pointer;
+}
+
+.pharmacy-menu-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.pharmacy-sidebar-overlay {
+  display: none;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.pharmacy-main {
+  flex: 1 1 auto;
+
+  width: calc(100% - 250px);
+
+  height: 100dvh;
+
+  min-width: 0;
+  min-height: 0;
+
+  margin-left: 250px;
+
+  box-sizing: border-box;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #f5f7fb;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+  .pharmacy-main {
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  /* -----------------------------------------------
+     LAYOUT
+  ------------------------------------------------ */
+
+  .pharmacy-layout {
+    width: 100%;
+
+    height: 100dvh;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    display: block;
+  }
+
+  /* -----------------------------------------------
+     HEADER
+  ------------------------------------------------ */
+
+  .pharmacy-mobile-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 52px;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    z-index: 10000;
+  }
+
+  /* -----------------------------------------------
+     OVERLAY
+  ------------------------------------------------ */
+
+  .pharmacy-sidebar-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.45);
+
+    z-index: 9000;
+  }
+
+  /* -----------------------------------------------
+     MAIN
+  ------------------------------------------------ */
+
+  .pharmacy-main {
+    width: 100% !important;
+
+    height: 100dvh;
+
+    min-width: 0;
+    min-height: 0;
+
+    margin-left: 0 !important;
+
+    padding-top: 52px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .pharmacy-mobile-header {
+    height: 50px;
+
+    padding: 0 8px;
+
+    gap: 9px;
+  }
+
+  .pharmacy-menu-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pharmacy-mobile-title {
+    font-size: 14px;
+  }
+
+  .pharmacy-main {
+    padding-top: 50px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .pharmacy-mobile-header {
+    height: 48px;
+
+    padding: 0 7px;
+  }
+
+  .pharmacy-menu-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pharmacy-main {
+    padding-top: 48px;
+  }
+
+  .pharmacy-mobile-title {
+    font-size: 13px;
+  }
+}

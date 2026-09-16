@@ -1,0 +1,1734 @@
+/* =========================================================
+   PRESCRIPTION HISTORY MODAL
+   FINAL - CENTERED / FULL DISPLAY / HISTORY + VIEW + EDIT
+========================================================= */
+
+:root {
+  --rx-primary: #2563eb;
+  --rx-primary-dark: #1d4ed8;
+  --rx-green: #16806a;
+  --rx-green-light: #ecfdf5;
+  --rx-red: #ef4444;
+  --rx-red-light: #fff1f2;
+  --rx-paper: #ffffff;
+  --rx-bg: #f8fafc;
+  --rx-line: #e2e8f0;
+  --rx-muted: #64748b;
+  --rx-text: #172b45;
+  --rx-font-sans: "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.rx-history-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 20px !important;
+
+  box-sizing: border-box !important;
+
+  background: rgba(15, 23, 42, 0.60) !important;
+
+  z-index: 99999 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   MAIN MODAL
+========================================================= */
+
+.rx-history-modal {
+  position: relative !important;
+
+  width: min(1400px, 96vw) !important;
+  height: min(900px, 94vh) !important;
+
+  max-width: 1400px !important;
+  max-height: 94vh !important;
+
+  margin: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  background: var(--rx-paper) !important;
+
+  border: 1px solid var(--rx-line) !important;
+  border-radius: 14px !important;
+
+  overflow: hidden !important;
+
+  box-sizing: border-box !important;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.30) !important;
+
+  transform: none !important;
+
+  animation: rxCenterOpen 0.22s ease-out !important;
+
+  font-family: var(--rx-font-sans);
+}
+
+
+@keyframes rxCenterOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.rx-history-header {
+  width: 100% !important;
+
+  min-height: 78px !important;
+  height: 78px !important;
+
+  flex-shrink: 0 !important;
+
+  box-sizing: border-box !important;
+
+  padding: 16px 24px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  gap: 20px !important;
+
+  background: #ffffff !important;
+
+  border-bottom: 1px solid var(--rx-line) !important;
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.rx-history-title-left {
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 14px !important;
+
+  min-width: 0 !important;
+}
+
+
+.rx-history-title-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  min-width: 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 9px !important;
+
+  background: #eff6ff !important;
+
+  color: var(--rx-primary) !important;
+}
+
+
+.rx-mode-title {
+  min-width: 0 !important;
+}
+
+
+.rx-mode-title h2 {
+  margin: 0 !important;
+
+  color: var(--rx-text) !important;
+
+  font-size: 21px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.25 !important;
+}
+
+
+.rx-mode-title p {
+  margin: 4px 0 0 !important;
+
+  color: var(--rx-muted) !important;
+
+  font-size: 13px !important;
+
+  line-height: 1.3 !important;
+}
+
+
+/* =========================================================
+   HEADER CLOSE BUTTON
+========================================================= */
+
+.rx-history-close,
+.rx-history-header button {
+  width: 38px !important;
+  height: 38px !important;
+
+  min-width: 38px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: none !important;
+
+  border-radius: 8px !important;
+
+  background: #f1f5f9 !important;
+
+  color: #64748b !important;
+
+  cursor: pointer !important;
+
+  transition: all 0.18s ease !important;
+}
+
+
+.rx-history-close:hover,
+.rx-history-header button:hover {
+  background: #fee2e2 !important;
+
+  color: #dc2626 !important;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+.rx-history-body {
+  flex: 1 !important;
+
+  min-height: 0 !important;
+
+  width: 100% !important;
+
+  padding: 24px !important;
+
+  box-sizing: border-box !important;
+
+  overflow-y: auto !important;
+
+  overflow-x: hidden !important;
+
+  background: #f8fafc !important;
+}
+
+
+/* =========================================================
+   HISTORY LIST
+========================================================= */
+
+.rx-history-list {
+  width: 100% !important;
+
+  max-width: 1100px !important;
+
+  margin: 0 auto !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  gap: 12px !important;
+}
+
+
+/* =========================================================
+   HISTORY ITEM
+========================================================= */
+
+.rx-history-item {
+  position: relative !important;
+
+  width: 100% !important;
+
+  min-height: 82px !important;
+
+  box-sizing: border-box !important;
+
+  padding: 14px 16px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  gap: 20px !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #dce3ea !important;
+
+  border-left: 4px solid #2f8f7b !important;
+
+  border-radius: 9px !important;
+
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+
+  transition: all 0.18s ease !important;
+}
+
+
+.rx-history-item:hover {
+  border-color: #b9d9d1 !important;
+
+  border-left-color: #16806a !important;
+
+  background: #fbfffd !important;
+
+  box-shadow:
+    0 7px 20px rgba(15, 23, 42, 0.08) !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   HISTORY ITEM LEFT
+========================================================= */
+
+.rx-history-item-info {
+  min-width: 0 !important;
+
+  flex: 1 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 14px !important;
+}
+
+
+/* =========================================================
+   DOCUMENT ICON
+========================================================= */
+
+.rx-history-file-icon {
+  width: 44px !important;
+  height: 44px !important;
+
+  min-width: 44px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 9px !important;
+
+  background: #ecfdf5 !important;
+
+  color: #16806a !important;
+}
+
+
+/* fallback if icon wrapper uses another class */
+
+.rx-history-item > svg:first-child {
+  width: 24px !important;
+  height: 24px !important;
+
+  flex-shrink: 0 !important;
+
+  color: #16806a !important;
+}
+
+
+/* =========================================================
+   HISTORY TEXT
+========================================================= */
+
+.rx-history-item-details {
+  min-width: 0 !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  gap: 4px !important;
+}
+
+
+.rx-history-item-details strong {
+  color: #172b45 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+}
+
+
+.rx-history-item-details span {
+  color: #64748b !important;
+
+  font-size: 12px !important;
+}
+
+
+.rx-history-item-details small {
+  color: #16806a !important;
+
+  font-size: 11px !important;
+
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   SUPPORT EXISTING TEXT STRUCTURE
+========================================================= */
+
+.rx-history-item-info strong {
+  color: #172b45 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+}
+
+
+.rx-history-item-info span {
+  color: #64748b !important;
+
+  font-size: 12px !important;
+}
+
+
+/* =========================================================
+   HISTORY ACTIONS
+========================================================= */
+
+.rx-history-item-actions {
+  flex-shrink: 0 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 8px !important;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.rx-history-item-actions .edit-btn,
+.rx-history-view-btn {
+  width: 38px !important;
+  height: 38px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #bfdbfe !important;
+
+  border-radius: 7px !important;
+
+  background: #eff6ff !important;
+
+  color: #2563eb !important;
+
+  cursor: pointer !important;
+
+  transition: all 0.18s ease !important;
+}
+
+
+.rx-history-item-actions .edit-btn:hover,
+.rx-history-view-btn:hover {
+  background: #2563eb !important;
+
+  border-color: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.rx-history-item-actions .delete-btn,
+.rx-history-delete-btn {
+  width: 38px !important;
+  height: 38px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #fecaca !important;
+
+  border-radius: 7px !important;
+
+  background: #fff1f2 !important;
+
+  color: #ef4444 !important;
+
+  cursor: pointer !important;
+
+  transition: all 0.18s ease !important;
+}
+
+
+.rx-history-item-actions .delete-btn:hover,
+.rx-history-delete-btn:hover {
+  background: #ef4444 !important;
+
+  border-color: #ef4444 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   EMPTY HISTORY
+========================================================= */
+
+.rx-history-empty {
+  width: 100% !important;
+
+  min-height: 360px !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  text-align: center !important;
+
+  color: #64748b !important;
+}
+
+
+.rx-history-empty svg {
+  margin-bottom: 12px !important;
+
+  color: #94a3b8 !important;
+}
+
+
+.rx-history-empty h3 {
+  margin: 0 0 6px !important;
+
+  color: #334155 !important;
+
+  font-size: 17px !important;
+}
+
+
+.rx-history-empty p {
+  margin: 0 !important;
+
+  color: #64748b !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.rx-history-loading {
+  min-height: 300px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  color: #64748b !important;
+
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   EDIT FORM
+========================================================= */
+
+.rx-edit-form {
+  width: 100% !important;
+
+  max-width: 1350px !important;
+
+  margin: 0 auto !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  gap: 18px !important;
+}
+
+
+/* =========================================================
+   TOP EDIT GRID
+========================================================= */
+
+.rx-edit-grid {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  gap: 16px !important;
+}
+
+
+.rx-edit-card {
+  background: #ffffff !important;
+
+  border: 1px solid #dce3ea !important;
+
+  border-radius: 10px !important;
+
+  padding: 18px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+.rx-edit-card-title {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 9px !important;
+
+  margin-bottom: 16px !important;
+
+  color: #17324d !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.rx-field-grid {
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  gap: 12px !important;
+}
+
+
+.rx-field-grid.three {
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 0.7fr)
+    minmax(0, 1fr) !important;
+}
+
+
+.rx-field {
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  gap: 6px !important;
+
+  margin-bottom: 12px !important;
+}
+
+
+.rx-field label {
+  color: #475569 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+}
+
+
+.rx-field input {
+  width: 100% !important;
+
+  min-height: 40px !important;
+
+  padding: 9px 11px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid #d6dee7 !important;
+
+  border-radius: 6px !important;
+
+  background: #ffffff !important;
+
+  color: #1e293b !important;
+
+  font-size: 13px !important;
+
+  outline: none !important;
+}
+
+
+.rx-field input:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10) !important;
+}
+
+
+.rx-field input[readonly] {
+  background: #f3f6f8 !important;
+
+  color: #64748b !important;
+
+  cursor: not-allowed !important;
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.rx-input-icon {
+  position: relative !important;
+}
+
+
+.rx-input-icon > svg {
+  position: absolute !important;
+
+  left: 11px !important;
+
+  top: 50% !important;
+
+  transform: translateY(-50%) !important;
+
+  color: #64748b !important;
+
+  pointer-events: none !important;
+}
+
+
+.rx-input-icon input {
+  padding-left: 34px !important;
+}
+
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.rx-form-section {
+  width: 100% !important;
+
+  padding: 18px !important;
+
+  box-sizing: border-box !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #dce3ea !important;
+
+  border-radius: 10px !important;
+}
+
+
+.rx-section-heading {
+  display: flex !important;
+
+  justify-content: space-between !important;
+
+  align-items: center !important;
+
+  margin-bottom: 14px !important;
+}
+
+
+.rx-section-heading > div {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 9px !important;
+
+  color: #17324d !important;
+}
+
+
+.rx-section-heading > div > svg {
+  color: #2563eb !important;
+}
+
+
+.rx-section-heading strong {
+  display: block !important;
+
+  font-size: 14px !important;
+
+  color: #172b45 !important;
+}
+
+
+.rx-section-heading small {
+  display: block !important;
+
+  margin-top: 3px !important;
+
+  color: #64748b !important;
+
+  font-size: 11px !important;
+}
+
+
+/* =========================================================
+   LIST ROW
+========================================================= */
+
+.rx-list-row {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 8px !important;
+
+  margin-bottom: 9px !important;
+}
+
+
+.rx-list-row input {
+  flex: 1 !important;
+
+  width: 100% !important;
+
+  min-height: 40px !important;
+
+  padding: 9px 11px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid #d6dee7 !important;
+
+  border-radius: 6px !important;
+
+  outline: none !important;
+
+  font-size: 13px !important;
+}
+
+
+.rx-list-row input:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+
+/* =========================================================
+   MEDICINE SECTION
+========================================================= */
+
+.rx-medicines-section {
+  position: relative !important;
+
+  z-index: 20 !important;
+}
+
+
+.rx-medicine-count {
+  padding: 6px 10px !important;
+
+  border-radius: 20px !important;
+
+  background: #eef5ff !important;
+
+  color: #2563eb !important;
+
+  font-size: 11px !important;
+
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   MEDICINE TABLE
+========================================================= */
+
+.rx-medicine-table {
+  position: relative !important;
+
+  width: 100% !important;
+
+  border: 1px solid #dce3ea !important;
+
+  border-radius: 8px !important;
+
+  overflow: visible !important;
+
+  background: #ffffff !important;
+}
+
+
+.rx-medicine-table-head,
+.rx-medicine-table-row {
+  display: grid !important;
+
+  grid-template-columns:
+    45px
+    minmax(260px, 1.7fr)
+    minmax(140px, 1fr)
+    minmax(140px, 1fr)
+    minmax(200px, 1.3fr)
+    60px !important;
+
+  gap: 8px !important;
+
+  align-items: center !important;
+
+  padding: 9px 10px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+.rx-medicine-table-head {
+  background: #f8fafc !important;
+
+  border-bottom: 1px solid #dce3ea !important;
+
+  color: #475569 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 700 !important;
+}
+
+
+.rx-medicine-table-row {
+  position: relative !important;
+
+  min-height: 70px !important;
+
+  border-bottom: 1px solid #edf1f5 !important;
+
+  overflow: visible !important;
+}
+
+
+.rx-medicine-table-row:last-child {
+  border-bottom: none !important;
+}
+
+
+.rx-medicine-number {
+  text-align: center !important;
+
+  color: #475569 !important;
+
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   MEDICINE SEARCH
+========================================================= */
+
+.rx-medicine-search {
+  position: relative !important;
+
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  z-index: 1000 !important;
+}
+
+
+.rx-search-input-wrap {
+  position: relative !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  width: 100% !important;
+}
+
+
+.rx-search-input-wrap > svg {
+  position: absolute !important;
+
+  left: 11px !important;
+
+  color: #64748b !important;
+
+  pointer-events: none !important;
+
+  z-index: 2 !important;
+}
+
+
+.rx-search-input-wrap input {
+  width: 100% !important;
+
+  height: 40px !important;
+
+  box-sizing: border-box !important;
+
+  padding: 0 34px 0 36px !important;
+
+  border: 1px solid #cfd9e4 !important;
+
+  border-radius: 7px !important;
+
+  background: #ffffff !important;
+
+  color: #172b45 !important;
+
+  outline: none !important;
+
+  font-size: 13px !important;
+}
+
+
+.rx-search-input-wrap input:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10) !important;
+}
+
+
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
+
+.rx-search-clear {
+  position: absolute !important;
+
+  right: 7px !important;
+
+  top: 50% !important;
+
+  transform: translateY(-50%) !important;
+
+  width: 25px !important;
+
+  height: 25px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: none !important;
+
+  background: transparent !important;
+
+  color: #94a3b8 !important;
+
+  cursor: pointer !important;
+
+  border-radius: 4px !important;
+}
+
+
+.rx-search-clear:hover {
+  background: #f1f5f9 !important;
+
+  color: #ef4444 !important;
+}
+
+
+/* =========================================================
+   MEDICINE DROPDOWN
+========================================================= */
+
+.rx-medicine-dropdown {
+  position: absolute !important;
+
+  top: calc(100% + 5px) !important;
+
+  left: 0 !important;
+  right: 0 !important;
+
+  width: 100% !important;
+
+  max-height: 330px !important;
+
+  overflow-y: auto !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #cfd9e4 !important;
+
+  border-radius: 9px !important;
+
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, 0.18) !important;
+
+  z-index: 999999 !important;
+}
+
+
+.rx-medicine-option {
+  width: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  gap: 12px !important;
+
+  padding: 12px 13px !important;
+
+  box-sizing: border-box !important;
+
+  border: none !important;
+
+  border-bottom: 1px solid #edf1f5 !important;
+
+  background: #ffffff !important;
+
+  text-align: left !important;
+
+  cursor: pointer !important;
+}
+
+
+.rx-medicine-option:last-child {
+  border-bottom: none !important;
+}
+
+
+.rx-medicine-option:hover {
+  background: #f2f7ff !important;
+}
+
+
+.rx-medicine-option-main {
+  min-width: 0 !important;
+}
+
+
+.rx-medicine-option-title {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 7px !important;
+
+  color: #2563eb !important;
+}
+
+
+.rx-medicine-option-title strong {
+  color: #172b45 !important;
+
+  font-size: 13px !important;
+
+  white-space: nowrap !important;
+
+  overflow: hidden !important;
+
+  text-overflow: ellipsis !important;
+}
+
+
+.rx-medicine-option-details {
+  display: flex !important;
+
+  flex-wrap: wrap !important;
+
+  gap: 6px !important;
+
+  margin-top: 4px !important;
+
+  padding-left: 24px !important;
+}
+
+
+.rx-medicine-option-details span {
+  color: #64748b !important;
+
+  font-size: 11px !important;
+}
+
+
+.rx-stock-badge {
+  flex-shrink: 0 !important;
+
+  padding: 5px 8px !important;
+
+  background: #ecfdf5 !important;
+
+  color: #047857 !important;
+
+  border-radius: 5px !important;
+
+  font-size: 10px !important;
+
+  font-weight: 700 !important;
+}
+
+
+.rx-medicine-dropdown-message {
+  min-height: 70px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  color: #64748b !important;
+
+  font-size: 12px !important;
+}
+
+
+/* =========================================================
+   MEDICINE INPUTS
+========================================================= */
+
+.rx-medicine-table-row > input {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 40px !important;
+
+  padding: 0 10px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid #d6dee7 !important;
+
+  border-radius: 6px !important;
+
+  outline: none !important;
+
+  font-size: 12.5px !important;
+
+  color: #172b45 !important;
+}
+
+
+.rx-medicine-table-row > input:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+
+/* =========================================================
+   REMOVE BUTTON
+========================================================= */
+
+.rx-remove-btn {
+  width: 36px !important;
+
+  height: 36px !important;
+
+  min-width: 36px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  border-radius: 6px !important;
+
+  border: 1px solid #fecaca !important;
+
+  background: #ffffff !important;
+
+  color: #ef4444 !important;
+
+  cursor: pointer !important;
+
+  transition: all 0.18s ease !important;
+}
+
+
+.rx-remove-btn:hover {
+  background: #ef4444 !important;
+
+  border-color: #ef4444 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.rx-add-btn {
+  margin-top: 8px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  gap: 6px !important;
+
+  padding: 9px 14px !important;
+
+  border: 1px dashed #2f8f7b !important;
+
+  border-radius: 6px !important;
+
+  background: #ffffff !important;
+
+  color: #167765 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+
+  cursor: pointer !important;
+}
+
+
+.rx-add-btn:hover {
+  background: #ecfdf5 !important;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.rx-form-section textarea {
+  width: 100% !important;
+
+  min-height: 100px !important;
+
+  box-sizing: border-box !important;
+
+  resize: vertical !important;
+
+  padding: 12px !important;
+
+  border: 1px solid #d6dee7 !important;
+
+  border-radius: 7px !important;
+
+  outline: none !important;
+
+  font-family: var(--rx-font-sans) !important;
+
+  font-size: 13px !important;
+}
+
+
+.rx-form-section textarea:focus {
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+
+/* =========================================================
+   EDIT ACTIONS
+========================================================= */
+
+.rx-edit-actions {
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  gap: 12px !important;
+
+  padding-top: 4px !important;
+
+  padding-bottom: 10px !important;
+}
+
+
+.rx-cancel-btn {
+  min-width: 90px !important;
+
+  padding: 10px 18px !important;
+
+  border: 1px solid #cbd5e1 !important;
+
+  border-radius: 7px !important;
+
+  background: #ffffff !important;
+
+  color: #334155 !important;
+
+  cursor: pointer !important;
+
+  font-weight: 600 !important;
+}
+
+
+.rx-cancel-btn:hover {
+  background: #f8fafc !important;
+}
+
+
+/* =========================================================
+   VIEW MODE
+========================================================= */
+
+.rx-history-view {
+  width: 100% !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  align-items: center !important;
+}
+
+
+.rx-history-view .rx-pad {
+  width: 100% !important;
+
+  max-width: 900px !important;
+
+  margin: 0 auto !important;
+
+  background: #ffffff !important;
+}
+
+
+.rx-history-view-actions {
+  width: 100% !important;
+
+  max-width: 900px !important;
+
+  margin: 18px auto 0 !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  gap: 12px !important;
+}
+
+
+.rx-history-back-bottom {
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  gap: 7px !important;
+
+  padding: 10px 16px !important;
+
+  border: 1px solid #cbd5e1 !important;
+
+  border-radius: 7px !important;
+
+  background: #ffffff !important;
+
+  color: #334155 !important;
+
+  cursor: pointer !important;
+
+  font-weight: 600 !important;
+}
+
+
+.rx-history-back-bottom:hover {
+  background: #f8fafc !important;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.rx-edit-toggle-btn {
+  height: 38px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  gap: 7px !important;
+
+  padding: 0 16px !important;
+
+  border: none !important;
+
+  border-radius: 7px !important;
+
+  background: #0ea5e9 !important;
+
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+
+  font-weight: 600 !important;
+
+  cursor: pointer !important;
+}
+
+
+.rx-edit-toggle-btn:hover {
+  background: #0284c7 !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.rx-history-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.rx-history-body::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+
+.rx-history-body::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+
+.rx-history-body::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .rx-medicine-table {
+    overflow-x: auto !important;
+  }
+
+  .rx-medicine-table-head,
+  .rx-medicine-table-row {
+    min-width: 1050px !important;
+  }
+}
+
+
+@media (max-width: 900px) {
+
+  .rx-history-overlay {
+    padding: 10px !important;
+  }
+
+  .rx-history-modal {
+    width: 98vw !important;
+
+    height: 96vh !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+  }
+
+  .rx-edit-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .rx-history-overlay {
+    padding: 0 !important;
+  }
+
+  .rx-history-modal {
+    width: 100vw !important;
+
+    height: 100vh !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+
+    border-radius: 0 !important;
+  }
+
+  .rx-history-header {
+    min-height: 68px !important;
+
+    height: 68px !important;
+
+    padding: 12px 14px !important;
+  }
+
+  .rx-history-body {
+    padding: 14px !important;
+  }
+
+  .rx-history-item {
+    min-height: 70px !important;
+
+    padding: 11px !important;
+
+    gap: 10px !important;
+  }
+
+  .rx-history-item-info {
+    gap: 9px !important;
+  }
+
+  .rx-history-file-icon {
+    width: 38px !important;
+    height: 38px !important;
+
+    min-width: 38px !important;
+  }
+
+  .rx-history-item-actions {
+    gap: 5px !important;
+  }
+
+  .rx-history-item-actions .edit-btn,
+  .rx-history-item-actions .delete-btn {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .rx-field-grid,
+  .rx-field-grid.three {
+    grid-template-columns: 1fr !important;
+  }
+
+  .rx-history-view-actions {
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+  }
+
+  .rx-history-view-actions button {
+    width: 100% !important;
+  }
+
+  .rx-edit-actions {
+    flex-direction: column-reverse !important;
+
+    align-items: stretch !important;
+  }
+
+  .rx-edit-actions button {
+    width: 100% !important;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .rx-history-overlay {
+    position: static !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    overflow: visible !important;
+  }
+
+  .rx-history-modal {
+    width: auto !important;
+
+    height: auto !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+  }
+
+  .rx-history-header,
+  .rx-history-body {
+    overflow: visible !important;
+  }
+
+  .rx-history-view-actions {
+    display: none !important;
+  }
+}

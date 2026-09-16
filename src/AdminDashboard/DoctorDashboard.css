@@ -1,0 +1,695 @@
+/* =====================================================
+   DOCTOR DASHBOARD
+===================================================== */
+
+.doc-dash {
+  width: 100%;
+  padding: 22px 0 50px;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.doc-dash-loading {
+  padding: 50px;
+  text-align: center;
+  color: #64748b;
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   WELCOME CARD
+===================================================== */
+
+.doc-welcome-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 32px;
+
+  margin-bottom: 28px;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #ffffff
+  );
+
+  border: 1px solid #e5e7eb;
+}
+
+
+.doc-welcome-small {
+  margin: 0 0 7px;
+
+  color: #6366f1;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+.doc-welcome-card h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+
+.doc-welcome-card p:last-child {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+.doc-welcome-icon {
+  width: 78px;
+  height: 78px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #4f46e5;
+
+  color: white;
+
+  box-shadow:
+    0 10px 25px
+    rgba(79, 70, 229, 0.25);
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.doc-stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 35px;
+}
+
+
+.doc-stat-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 3px 12px
+    rgba(15, 23, 42, 0.04);
+}
+
+
+.doc-stat-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+}
+
+
+.doc-stat-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.doc-stat-content span {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.doc-stat-content strong {
+  color: #0f172a;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+   SECTION HEADER
+===================================================== */
+
+.doc-section-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+
+.doc-section-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 21px;
+}
+
+
+.doc-section-header p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+.doc-view-profile-btn {
+  border: 0;
+
+  background: transparent;
+
+  color: #4f46e5;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.doc-view-profile-btn:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.doc-profile-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 25px;
+
+  margin-bottom: 35px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(15, 23, 42, 0.04);
+}
+
+
+.doc-profile-photo {
+  width: 94px;
+  height: 94px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #eef2ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #4f46e5;
+
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+
+.doc-profile-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+.doc-profile-info {
+  flex: 1;
+}
+
+
+.doc-profile-info h1 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 22px;
+}
+
+
+.doc-profile-role {
+  margin: 0 0 13px;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+.doc-profile-meta {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+
+.doc-profile-meta span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #475569;
+
+  font-size: 13px;
+}
+
+
+.doc-profile-meta svg {
+  color: #64748b;
+}
+
+
+/* =====================================================
+   EDIT BUTTON
+===================================================== */
+
+.doc-edit-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: #4f46e5;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.doc-edit-btn:hover {
+  background: #4338ca;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-header {
+  margin-bottom: 14px;
+}
+
+
+.doc-quick-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+.doc-quick-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 22px;
+
+  text-align: left;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.doc-quick-card svg {
+  color: #4f46e5;
+
+  flex-shrink: 0;
+}
+
+
+.doc-quick-card h3 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 16px;
+}
+
+
+.doc-quick-card p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.doc-quick-card:hover {
+  border-color: #818cf8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(15, 23, 42, 0.06);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .doc-stats-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .doc-welcome-card {
+    padding: 22px;
+  }
+
+  .doc-welcome-icon {
+    display: none;
+  }
+
+  .doc-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-profile-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .doc-edit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .doc-quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* =====================================================
+   DOCTOR DASHBOARD RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .doc-dash {
+    width: 100%;
+    padding: 15px 0 35px;
+    box-sizing: border-box;
+  }
+
+  .doc-welcome-card {
+    padding: 22px;
+    margin-bottom: 20px;
+  }
+
+  .doc-welcome-card h1 {
+    font-size: 24px;
+  }
+
+  .doc-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+  }
+
+  .doc-stat-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .doc-profile-card {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .doc-quick-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .doc-dash {
+    padding: 10px 0 30px;
+  }
+
+  .doc-welcome-card {
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  .doc-welcome-small {
+    font-size: 12px;
+  }
+
+  .doc-welcome-card h1 {
+    font-size: 21px;
+  }
+
+  .doc-welcome-card p:last-child {
+    font-size: 12px;
+  }
+
+  .doc-welcome-icon {
+    display: none;
+  }
+
+  .doc-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+  }
+
+  .doc-stat-card {
+    padding: 15px;
+
+    border-radius: 12px;
+  }
+
+  .doc-stat-icon {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+  }
+
+  .doc-stat-content span {
+    font-size: 12px;
+  }
+
+  .doc-stat-content strong {
+    font-size: 22px;
+  }
+
+  .doc-section-header {
+    align-items: flex-start;
+
+    gap: 12px;
+
+    flex-direction: column;
+  }
+
+  .doc-section-header h2 {
+    font-size: 19px;
+  }
+
+  .doc-section-header p {
+    font-size: 12px;
+  }
+
+  .doc-view-profile-btn {
+    padding: 0;
+  }
+
+  .doc-profile-card {
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px 15px;
+
+    border-radius: 14px;
+  }
+
+  .doc-profile-photo {
+    width: 82px;
+    height: 82px;
+  }
+
+  .doc-profile-info {
+    width: 100%;
+  }
+
+  .doc-profile-info h1 {
+    font-size: 20px;
+  }
+
+  .doc-profile-role {
+    font-size: 13px;
+  }
+
+  .doc-profile-meta {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+  }
+
+  .doc-edit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .doc-quick-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-quick-card {
+    padding: 16px;
+
+    gap: 13px;
+  }
+
+  .doc-quick-card h3 {
+    font-size: 14px;
+  }
+
+  .doc-quick-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .doc-welcome-card {
+    padding: 15px;
+  }
+
+  .doc-welcome-card h1 {
+    font-size: 19px;
+  }
+
+  .doc-stat-card {
+    padding: 13px;
+  }
+
+  .doc-profile-card {
+    padding: 16px 12px;
+  }
+}

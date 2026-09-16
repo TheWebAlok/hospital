@@ -1,0 +1,428 @@
+/* =================================
+   SERVICE DETAILS PAGE
+================================= */
+
+.service-details-page {
+  background: #fff;
+  margin-top: -100px;
+}
+
+/* =================================
+   PAGE TITLE
+================================= */
+
+.service-details-page .page-title {
+}
+
+.service-details-page .heading {
+  padding: 70px 0 60px;
+  background: #f5f9fc;
+}
+
+.service-details-page .heading-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.service-details-page .heading p {
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+/* =================================
+   BREADCRUMBS
+================================= */
+
+.service-details-page .breadcrumbs {
+  padding: 20px 0;
+}
+
+.service-details-page .breadcrumbs ol {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-details-page .breadcrumbs li {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.service-details-page .breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 10px;
+  color: #aaa;
+}
+
+.service-details-page .breadcrumbs a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+/* =================================
+   MAIN SECTION
+================================= */
+
+.service-details-page .service-details-2 {
+  padding: 70px 0;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.service-details-page .service-header {
+  max-width: 850px;
+  margin: auto;
+}
+
+.service-details-page .service-category {
+  margin-bottom: 15px;
+}
+
+.service-details-page .service-category span {
+  display: inline-block;
+  padding: 7px 16px;
+  border-radius: 30px;
+  background: #eaf3ff;
+  color: #0d6efd;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.service-details-page .service-header h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.service-details-page .service-header .lead {
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* =================================
+   DETAIL ITEMS
+================================= */
+
+.service-details-page .service-details {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.service-details-page .detail-item {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.service-details-page .detail-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.service-details-page .icon-wrapper {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: #fff;
+  font-size: 23px;
+}
+
+.service-details-page .detail-item h4 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.service-details-page .detail-item p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* =================================
+   SERVICE IMAGE
+================================= */
+
+.service-details-page .service-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.service-details-page .service-visual img {
+  width: 100%;
+  min-height: 450px;
+  object-fit: cover;
+}
+
+.service-details-page .visual-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+.service-details-page .stats-card {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  color: #fff;
+}
+
+.service-details-page .stat {
+  text-align: center;
+}
+
+.service-details-page .stat .number {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.service-details-page .stat .label {
+  font-size: 14px;
+}
+
+/* =================================
+   OVERVIEW
+================================= */
+
+.service-details-page .service-overview {
+  padding: 45px;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+
+.service-details-page .service-overview h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.service-details-page .service-overview p {
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+/* =================================
+   FEATURES
+================================= */
+
+.service-details-page .features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.service-details-page .feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-details-page .feature i {
+  color: #0d6efd;
+  font-size: 20px;
+}
+
+.service-details-page .feature span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =================================
+   CONDITIONS
+================================= */
+
+.service-details-page .treatment-areas {
+  padding-left: 30px;
+}
+
+.service-details-page .treatment-areas h4 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.service-details-page .condition-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service-details-page .tag {
+  padding: 9px 14px;
+  border-radius: 25px;
+  background: #fff;
+  border: 1px solid #dbe4ed;
+  color: #374151;
+  font-size: 13px;
+}
+
+/* =================================
+   ACTION CARDS
+================================= */
+
+.service-details-page .action-card {
+  height: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.service-details-page .card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.service-details-page .card-header i {
+  font-size: 25px;
+  color: #0d6efd;
+}
+
+.service-details-page .card-header h4 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.service-details-page .action-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.service-details-page .card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.service-details-page .btn-action {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.service-details-page .btn-action:hover {
+  background: #0b5ed7;
+  color: #fff;
+}
+
+.service-details-page .availability {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 991px) {
+  .service-details-page .page-title {
+    padding-top: 120px;
+  }
+
+  .service-details-page .heading-title {
+    font-size: 40px;
+  }
+
+  .service-details-page .service-header h2 {
+    font-size: 32px;
+  }
+
+  .service-details-page .treatment-areas {
+    padding-left: 0;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-details-page .page-title {
+    padding-top: 100px;
+  }
+
+  .service-details-page .heading {
+    padding: 50px 20px;
+  }
+
+  .service-details-page .heading-title {
+    font-size: 34px;
+  }
+
+  .service-details-page .service-details-2 {
+    padding: 50px 0;
+  }
+
+  .service-details-page .service-header h2 {
+    font-size: 27px;
+  }
+
+  .service-details-page .service-visual img {
+    min-height: 350px;
+  }
+
+  .service-details-page .stats-card {
+    gap: 30px;
+  }
+
+  .service-details-page .service-overview {
+    padding: 25px;
+  }
+
+  .service-details-page .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-details-page .heading-title {
+    font-size: 30px;
+  }
+
+  .service-details-page .detail-item {
+    flex-direction: column;
+  }
+
+  .service-details-page .stats-card {
+    gap: 20px;
+  }
+
+  .service-details-page .stat .number {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,481 @@
+/* ================================
+   PAGE HEADER
+================================ */
+
+.page-header {
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 7px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.page-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  color: #94a3b8;
+}
+
+.search-box:focus-within {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-box input {
+  width: 180px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #334155;
+
+  font-size: 14px;
+}
+
+/* ================================
+   FILTER
+================================ */
+
+.filter-select {
+  height: 42px;
+
+  padding: 0 12px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.filter-select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ================================
+   PRIMARY BUTTON
+================================ */
+
+.primary-btn {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+/* ================================
+   TABLE
+================================ */
+
+.table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+}
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+
+  min-width: 950px;
+
+  border-collapse: collapse;
+}
+
+.table-wrapper th {
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;
+}
+
+.table-wrapper td {
+  padding: 15px 16px;
+
+  color: #334155;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  font-size: 14px;
+}
+
+.table-wrapper tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ================================
+   STATUS SELECT
+================================ */
+
+.status-select {
+  min-width: 120px;
+
+  padding: 7px 10px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 7px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* ================================
+   DELETE BUTTON
+================================ */
+
+.delete-btn {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 8px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+
+  color: #b91c1c;
+}
+
+/* ================================
+   EMPTY
+================================ */
+
+.empty-message {
+  padding: 40px !important;
+
+  text-align: center;
+
+  color: #94a3b8 !important;
+}
+
+/* ================================
+   MODAL
+   Renamed from .modal-overlay/.modal/.modal-header to
+   .appt-modal-overlay/.appt-modal/.appt-modal-header —
+   Bootstrap ships its own ".modal" component with
+   "display: none" by default, so a bare ".modal" class
+   here gets hidden by Bootstrap's rules and only the dark
+   overlay stays visible (the "everything goes dim, no box
+   appears" bug). Namespacing avoids that collision for good.
+================================ */
+
+.appt-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  z-index: 2000;
+}
+
+.appt-modal {
+  width: 100%;
+
+  max-width: 620px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
+}
+
+/* ================================
+   MODAL HEADER
+================================ */
+
+.appt-modal-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 22px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.appt-modal-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 20px;
+}
+
+.close-btn {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #fee2e2;
+
+  color: #dc2626;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.doctor-form {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  padding: 22px;
+}
+
+.doctor-form input,
+.doctor-form select,
+.doctor-form textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 13px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+.doctor-form input:focus,
+.doctor-form select:focus,
+.doctor-form textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.doctor-form textarea {
+  min-height: 100px;
+
+  resize: vertical;
+
+  grid-column: 1 / -1;
+}
+
+.doctor-form .primary-btn {
+  grid-column: 1 / -1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .page-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-actions {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-form {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-form textarea,
+  .doctor-form .primary-btn {
+    grid-column: auto;
+  }
+
+  .page-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .search-box,
+  .filter-select,
+  .primary-btn {
+    width: 100%;
+  }
+}

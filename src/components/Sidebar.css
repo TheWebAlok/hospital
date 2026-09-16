@@ -1,0 +1,496 @@
+/* =====================================================
+   SIDEBAR - BASE
+===================================================== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 14px;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2e8f0;
+
+  color: #1e293b;
+
+  z-index: 1100;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.dark-mode .sidebar {
+  background: #111827;
+
+  border-right-color: #334155;
+
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  margin-bottom: 28px;
+
+  color: #2563eb;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   SIDEBAR CLOSE BUTTON
+===================================================== */
+
+.sidebar-close-btn {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  cursor: pointer;
+}
+
+.dark-mode .sidebar-close-btn {
+  background: #1e293b;
+
+  color: #e2e8f0;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.sidebar nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding: 0;
+}
+
+
+/* =====================================================
+   MENU ITEM
+===================================================== */
+
+.menu-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border-radius: 9px;
+
+  color: #475569;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* DARK */
+
+.dark-mode .menu-item {
+  color: #cbd5e1;
+}
+
+
+/* HOVER */
+
+.menu-item:hover {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.dark-mode .menu-item:hover {
+  background: #1e293b;
+
+  color: #60a5fa;
+}
+
+
+/* ACTIVE */
+
+.menu-item.active {
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+.menu-item.active:hover {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.sidebar-bottom {
+  margin-top: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  padding-top: 20px;
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-btn {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 15px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #f1f5f9;
+
+  color: #334155;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* DARK */
+
+.dark-mode .theme-btn {
+  background: #1e293b;
+
+  color: #f8fafc;
+}
+
+
+/* HOVER */
+
+.theme-btn:hover {
+  background: #e2e8f0;
+}
+
+.dark-mode .theme-btn:hover {
+  background: #334155;
+}
+
+
+/* =====================================================
+   ADMIN PROFILE
+===================================================== */
+
+.admin-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 10px;
+
+  border-top: 1px solid #e2e8f0;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dark-mode .admin-profile {
+  border-color: #334155;
+}
+
+
+/* =====================================================
+   ADMIN AVATAR
+===================================================== */
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   ADMIN INFO
+===================================================== */
+
+.admin-info {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.admin-info strong {
+  font-size: 14px;
+
+  color: #0f172a;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.dark-mode .admin-info strong {
+  color: #f8fafc;
+}
+
+.admin-info span {
+  margin-top: 3px;
+
+  font-size: 12px;
+
+  color: #64748b;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.dark-mode .admin-info span {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+.logout-btn {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 15px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fecaca;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .sidebar {
+    width: 240px;
+
+    min-width: 240px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* ---------------------------------
+     SIDEBAR DRAWER
+  --------------------------------- */
+
+  .sidebar {
+    width: 280px;
+
+    min-width: 280px;
+
+    transform: translateX(-100%);
+
+    box-shadow: 8px 0 25px rgba(0, 0, 0, 0.12);
+  }
+
+
+  /* OPEN */
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+
+  /* ---------------------------------
+     CLOSE BUTTON
+  --------------------------------- */
+
+  .sidebar-close-btn {
+    display: flex;
+  }
+
+
+  /* ---------------------------------
+     LOGO
+  --------------------------------- */
+
+  .logo {
+    padding: 0 10px;
+
+    margin-bottom: 25px;
+  }
+
+
+  /* ---------------------------------
+     MENU
+  --------------------------------- */
+
+  .menu-item {
+    padding: 13px 15px;
+  }
+
+
+  /* ---------------------------------
+     BOTTOM
+  --------------------------------- */
+
+  .sidebar-bottom {
+    padding-top: 20px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .sidebar {
+    width: 270px;
+
+    min-width: 270px;
+  }
+
+}

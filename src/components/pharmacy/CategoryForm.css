@@ -1,0 +1,214 @@
+/* ================================
+   CATEGORY MODAL
+================================ */
+
+.category-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.category-modal {
+  width: 100%;
+  max-width: 560px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ================================
+   HEADER
+================================ */
+
+.category-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.category-modal-header h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.category-modal-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.category-close-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.category-close-btn:hover {
+  background: #e5e7eb;
+}
+
+/* ================================
+   FORM
+================================ */
+
+.category-modal form {
+  padding: 24px;
+}
+
+.category-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.category-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.category-form-group label span {
+  color: #dc2626;
+}
+
+.category-form-group input,
+.category-form-group textarea,
+.category-form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.category-form-group input,
+.category-form-group select {
+  height: 43px;
+  padding: 0 12px;
+}
+
+.category-form-group textarea {
+  padding: 11px 12px;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.category-form-group input:focus,
+.category-form-group textarea:focus,
+.category-form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.category-form-group input::placeholder,
+.category-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+
+.category-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.category-cancel-btn,
+.category-save-btn {
+  min-height: 42px;
+  padding: 0 17px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.category-cancel-btn {
+  background: #fff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.category-cancel-btn:hover {
+  background: #f9fafb;
+}
+
+.category-save-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+}
+
+.category-save-btn:hover {
+  background: #1d4ed8;
+}
+
+.category-cancel-btn:disabled,
+.category-save-btn:disabled,
+.category-close-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 600px) {
+  .category-modal-overlay {
+    padding: 10px;
+  }
+
+  .category-modal-header {
+    padding: 18px;
+  }
+
+  .category-modal form {
+    padding: 18px;
+  }
+
+  .category-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .category-cancel-btn,
+  .category-save-btn {
+    width: 100%;
+  }
+}
