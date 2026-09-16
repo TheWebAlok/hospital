@@ -112,7 +112,11 @@ function PublicLayout() {
       <Footer />
  {/* AI Health Assistant - All Client Pages */}
       <AIHealthAssistant />
+
+
       <CookieConsent />
+      
+      
       <ToastContainer
         position="top-right"
         autoClose={3000}
