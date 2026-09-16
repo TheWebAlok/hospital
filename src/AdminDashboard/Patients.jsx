@@ -4,8 +4,8 @@ import { Plus, Trash2, X, Pencil, Search, FileText, History } from "lucide-react
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "./Patients.css";
-import PrescriptionModal from "../components/Prescriptionmodal";
-import PrescriptionHistoryModal from "../components/Prescriptionhistorymodal";
+import PrescriptionModal from "../components/PrescriptionModal";
+import PrescriptionHistoryModal from "../components/PrescriptionHistoryModal";
 
 export default function Patients() {
   const [patients, setPatients] = useState([]);
