@@ -93,8 +93,8 @@ import DoctorVideoConsultation from "./AdminDashboard/DoctorVideoConsultation";
 import PatientVideoConsultation from "./AdminDashboard/PatientVideoConsultation";
 import AIHealthAssistant from "./components/AIHealthAssistant";
 import DoctorProfileById from "./pages/DoctorProfileById";
-import CookieConsent from "./components/Cookieconsent";
-import PrivacyPolicy from "./pages/Privacypolicy";
+import CookieConsent from "./components/CookieConsent";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 // =====================================================
 // PUBLIC LAYOUT
