@@ -93,10 +93,9 @@ export default function Services() {
           <div className="container">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link>&nbsp; / Services
               </li>
 
-              <li className="current">Services</li>
             </ol>
           </div>
         </nav>

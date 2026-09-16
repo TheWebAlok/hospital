@@ -102,21 +102,19 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function PublicLayout() {
   return (
-    <>
+    <div className="public-layout">
       <Navbar />
 
-      <main>
+      <main className="public-main">
         <Outlet />
       </main>
 
       <Footer />
- {/* AI Health Assistant - All Client Pages */}
+
       <AIHealthAssistant />
 
-
       <CookieConsent />
-      
-      
+
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -127,10 +125,9 @@ function PublicLayout() {
         draggable
         theme="colored"
       />
-    </>
+    </div>
   );
 }
-
 // =====================================================
 // PHARMACY LAYOUT
 // MOBILE MENU + SIDEBAR

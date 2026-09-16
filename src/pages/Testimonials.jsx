@@ -177,12 +177,10 @@ export default function Testimonials() {
 
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> &nbsp; / Testimonials
               </li>
 
-              <li className="current">
-                Testimonials
-              </li>
+              
             </ol>
 
           </div>

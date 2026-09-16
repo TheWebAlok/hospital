@@ -256,9 +256,8 @@ export default function Departments() {
           <div className="container">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link>  &nbsp; / Departments
               </li>
-              <li className="current">Departments</li>
             </ol>
           </div>
         </nav>

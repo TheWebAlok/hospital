@@ -1036,12 +1036,11 @@ const handleOffer = async (offer) => {
               <li>
                 <Link to="/">
                   Home
-                </Link>
+                </Link> &nbsp; / 
+                 Appointment
               </li>
 
-              <li className="current">
-                Appointment
-              </li>
+              
 
             </ol>
 
@@ -1177,10 +1176,11 @@ const handleOffer = async (offer) => {
                       {/* NAME */}
 
                       <div className="col-md-6">
-
+<label htmlFor="name" className="form-label">Name</label>
                         <input
                           type="text"
                           name="name"
+                          id="name"
                           className="form-control"
                           placeholder="Full Name"
                           value={
@@ -1197,10 +1197,12 @@ const handleOffer = async (offer) => {
                       {/* EMAIL */}
 
                       <div className="col-md-6">
+<label htmlFor="email" className="form-label">Email ID</label>
 
                         <input
                           type="email"
                           name="email"
+                          id="email"
                           className="form-control"
                           placeholder="Email Address"
                           value={
@@ -1217,10 +1219,12 @@ const handleOffer = async (offer) => {
                       {/* PHONE */}
 
                       <div className="col-md-6">
+<label htmlFor="phone" className="form-label">Phone Number</label>
 
                         <input
                           type="tel"
                           name="phone"
+                          id="phone"
                           className="form-control"
                           placeholder="Phone Number"
                           value={
@@ -1237,10 +1241,12 @@ const handleOffer = async (offer) => {
                       {/* AGE */}
 
                       <div className="col-md-6">
+<label htmlFor="age" className="form-label">Age</label>
 
                         <input
                           type="number"
                           name="age"
+                          id="age"
                           className="form-control"
                           placeholder="Age"
                           min="0"
@@ -1258,9 +1264,11 @@ const handleOffer = async (offer) => {
                       {/* GENDER */}
 
                       <div className="col-md-6">
+<label htmlFor="gender" className="form-label">Gender</label>
 
                         <select
                           name="gender"
+                          id="gender"
                           className="form-select"
                           value={
                             formData.gender
@@ -1294,9 +1302,11 @@ const handleOffer = async (offer) => {
                       {/* DEPARTMENT */}
 
                       <div className="col-md-6">
+<label htmlFor="department" className="form-label">Department</label>
 
                         <select
                           name="department"
+                          id="department"
                           className="form-select"
                           value={
                             formData.department
@@ -1346,9 +1356,11 @@ const handleOffer = async (offer) => {
                       {/* DATE */}
 
                       <div className="col-md-6">
+<label htmlFor="date" className="form-label">Choose Meeting Date</label>
 
                         <input
                           type="date"
+                          id="date"
                           name="date"
                           className="form-control"
                           value={
@@ -1365,10 +1377,12 @@ const handleOffer = async (offer) => {
                       {/* TIME */}
 
                       <div className="col-md-6">
+<label htmlFor="time" className="form-label">Choose Meeting Time</label>
 
                         <input
                           type="time"
                           name="time"
+                          id="time"
                           className="form-control"
                           value={
                             formData.time
@@ -1384,9 +1398,11 @@ const handleOffer = async (offer) => {
                       {/* DOCTOR */}
 
                       <div className="col-12">
+<label htmlFor="doctor" className="form-label">Select Doctors</label>
 
                         <select
                           name="doctor"
+                          id="doctor"
                           className="form-select"
                           value={
                             formData.doctor
@@ -1434,9 +1450,11 @@ const handleOffer = async (offer) => {
                       {/* MESSAGE */}
 
                       <div className="col-12">
+<label htmlFor="message" className="form-label">Message</label>
 
                         <textarea
                           name="message"
+                          id="message"
                           className="form-control"
                           rows="4"
                           placeholder="Additional notes or symptoms (optional)"

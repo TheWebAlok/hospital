@@ -54,15 +54,12 @@ body {
   margin: 0;
 }
 
+/* ✅ FIXED: removed width/margin-auto/text-align/border/min-height/flex
+   these were Vite boilerplate rules causing the extra bottom gap
+   since .public-layout already handles the full-height flex layout */
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin: 0;
   box-sizing: border-box;
 }
 

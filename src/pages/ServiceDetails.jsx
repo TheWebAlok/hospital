@@ -87,12 +87,11 @@ export default function ServiceDetails() {
           <div className="container">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> &nbsp; / Service Details
+                
               </li>
 
-              <li className="current">
-                Service Details
-              </li>
+             
             </ol>
           </div>
         </nav>

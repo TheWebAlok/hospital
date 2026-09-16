@@ -29,9 +29,8 @@ export default function Terms() {
           <div className="container">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> &nbsp; / Terms
               </li>
-              <li className="current">Terms</li>
             </ol>
           </div>
         </nav>

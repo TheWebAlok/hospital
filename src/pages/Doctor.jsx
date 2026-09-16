@@ -391,12 +391,10 @@ export default function Doctor() {
               <li>
                 <Link to="/">
                   Home
-                </Link>
+                </Link>  &nbsp; / Doctors
               </li>
 
-              <li className="current">
-                Doctors
-              </li>
+              
 
             </ol>
 

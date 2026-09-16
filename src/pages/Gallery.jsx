@@ -64,12 +64,10 @@ export default function Gallery() {
               <li>
                 <Link to="/">
                   Home
-                </Link>
+                </Link>  &nbsp; / Gallery
               </li>
 
-              <li className="current">
-                Gallery
-              </li>
+              
 
             </ol>
 

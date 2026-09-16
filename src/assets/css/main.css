@@ -939,7 +939,13 @@ section,
   scroll-margin-top: 90px;
   overflow: clip;
 }
-
+.Toastify {
+  padding: 0 !important;
+  position: fixed !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
 @media (max-width: 1199px) {
 
   section,

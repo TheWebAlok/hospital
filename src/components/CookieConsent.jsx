@@ -1,46 +1,67 @@
 import React, { useState, useEffect } from "react";
+import { Cookie } from "lucide-react";
 import "./CookieConsent.css";
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
-    // Check kar rahe hain ki user pehle kabhi choice de chuka hai ya nahi
+    // Check whether the user has already made a choice before
     const consent = localStorage.getItem("cookie_consent");
 
     if (!consent) {
-      setShowBanner(true);
+      // Small delay so the banner slides in smoothly after page load
+      const timer = setTimeout(() => setShowBanner(true), 600);
+      return () => clearTimeout(timer);
     }
   }, []);
 
-  const handleAccept = () => {
-    localStorage.setItem("cookie_consent", "accepted");
-    setShowBanner(false);
+  const closeWithAnimation = (callback) => {
+    setIsClosing(true);
+    setTimeout(() => {
+      callback();
+      setShowBanner(false);
+      setIsClosing(false);
+    }, 300);
+  };
 
-    // Yahan aap analytics/tracking scripts (Google Analytics, FB Pixel, etc.) enable kar sakte ho
-    // Example: initGoogleAnalytics();
+  const handleAccept = () => {
+    closeWithAnimation(() => {
+      localStorage.setItem("cookie_consent", "accepted");
+      // Enable analytics/tracking scripts here (Google Analytics, FB Pixel, etc.)
+      // Example: initGoogleAnalytics();
+    });
   };
 
   const handleReject = () => {
-    localStorage.setItem("cookie_consent", "rejected");
-    setShowBanner(false);
-
-    // Yahan tracking scripts disable/skip rakhna
+    closeWithAnimation(() => {
+      localStorage.setItem("cookie_consent", "rejected");
+      // Keep tracking scripts disabled/skipped here
+    });
   };
 
   if (!showBanner) return null;
 
   return (
-    <div className="cookie-consent-banner">
+    <div className={`cookie-consent-banner ${isClosing ? "closing" : ""}`}>
       <div className="cookie-consent-content">
-        <p className="cookie-consent-text">
-          🍪 Hum aapke better experience ke liye cookies use karte hain. Site
-          use karke aap hamari{" "}
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </a>{" "}
-          se sehmat hote hain.
-        </p>
+        <div className="cookie-consent-icon">
+          <Cookie size={22} />
+        </div>
+
+        <div className="cookie-consent-text-wrap">
+          <p className="cookie-consent-title">We value your privacy</p>
+          <p className="cookie-consent-text">
+            We use cookies to enhance your browsing experience, provide
+            personalised care recommendations, and analyse our traffic. By
+            clicking "Accept", you consent to our use of cookies. Read our{" "}
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              Privacy Policy
+            </a>{" "}
+            to learn more.
+          </p>
+        </div>
 
         <div className="cookie-consent-buttons">
           <button
@@ -56,7 +77,7 @@ const CookieConsent = () => {
             className="cookie-btn cookie-btn-accept"
             onClick={handleAccept}
           >
-            Accept
+            Accept All
           </button>
         </div>
       </div>

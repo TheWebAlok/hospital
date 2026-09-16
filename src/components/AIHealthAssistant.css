@@ -2,7 +2,7 @@
 .ai-floating-wrapper {
   position: fixed;
   right: 25px;
-  bottom: 25px;
+  bottom: calc(var(--emergency-bar-height, 90px) + 20px);
   z-index: 9998;
   display: flex;
   flex-direction: column;
@@ -226,6 +226,7 @@
 
   .ai-floating-wrapper {
     right: 18px;
-    bottom: 18px;
+    /* bottom no longer overridden here — calc(var(--emergency-bar-height...))
+       above already adapts automatically on mobile */
   }
 }

@@ -76,12 +76,10 @@ export default function FAQ() {
 
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link>  &nbsp;/ FAQ
               </li>
 
-              <li className="current">
-                FAQ
-              </li>
+              
             </ol>
 
           </div>

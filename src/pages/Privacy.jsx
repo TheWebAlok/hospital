@@ -24,8 +24,7 @@ function Privacy() {
         <nav className="breadcrumbs">
           <div className="container">
             <ol>
-              <li><a href="/">Home</a></li>
-              <li className="current">Privacy</li>
+              <li><a href="/">Home</a> &nbsp; / Privacy</li>
             </ol>
           </div>
         </nav>

@@ -52,11 +52,10 @@ export default function About() {
                 <Link to="/">
                   Home
                 </Link>
+                 &nbsp; /  About
               </li>
 
-              <li className="current">
-                About
-              </li>
+              
             </ol>
 
           </div>

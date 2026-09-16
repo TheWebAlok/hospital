@@ -1,0 +1,130 @@
+:root {
+  --mc-primary: #0f6e5e;
+  --mc-primary-dark: #0a4f43;
+  --mc-emergency: #c0293c;
+  --mc-emergency-dark: #971f2e;
+  --mc-text: #1f2a2e;
+  --mc-text-muted: #6b7a7d;
+  --mc-border: #e2e8e7;
+  --mc-bg: #f7faf9;
+}
+
+footer {
+  background: var(--mc-bg);
+  color: var(--mc-text);
+  font-family: "Inter", system-ui, sans-serif;
+  width: 100%;
+}
+
+.mc-emergency {
+  background: linear-gradient(135deg, var(--mc-emergency) 0%, var(--mc-emergency-dark) 100%);
+  color: #fff;
+}
+
+.mc-emergency-number {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.mc-emergency-number:hover {
+  text-decoration: underline;
+}
+
+.mc-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  animation: mc-pulse-anim 1.8s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes mc-pulse-anim {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.mc-fine {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.container.py-5 .mc-fine,
+.mc-bottom .mc-fine {
+  color: var(--mc-text-muted);
+}
+
+.mc-icon {
+  color: var(--mc-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mc-emergency .mc-icon {
+  color: #fff;
+}
+
+.mc-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--mc-primary-dark);
+}
+
+.mc-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mc-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mc-link {
+  color: var(--mc-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.mc-link:hover {
+  color: var(--mc-primary);
+  text-decoration: underline;
+}
+
+address {
+  font-style: normal;
+  color: var(--mc-text-muted);
+  line-height: 1.5;
+}
+
+.mc-bottom {
+  background: #eef3f2;
+  border-top: 1px solid var(--mc-border);
+}
+
+.mc-bottom .mc-link {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 991.98px) {
+  .mc-emergency-number {
+    font-size: 1.6rem;
+  }
+
+  .col-lg-5 .mc-fine {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .mc-bottom .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

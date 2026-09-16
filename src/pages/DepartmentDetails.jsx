@@ -92,12 +92,10 @@ export default function DepartmentDetails() {
             <ol>
 
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> &nbsp;/ Department Details
               </li>
 
-              <li className="current">
-                Department Details
-              </li>
+              
 
             </ol>
 

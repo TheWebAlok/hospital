@@ -63,9 +63,9 @@ export default function Contact() {
           <div className="container">
             <ol>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> &nbsp;/ Contact
               </li>
-              <li className="current">Contact</li>
+           
             </ol>
           </div>
         </nav>

@@ -9,7 +9,7 @@ const AIHealthAssistant = () => {
     import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   // ✅ CHANGED: default true, so chat opens automatically on every page refresh
-  const [isChatOpen, setIsChatOpen] = useState(true);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);

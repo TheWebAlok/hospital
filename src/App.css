@@ -1,69 +1,84 @@
-* {
-  box-sizing: border-box;
-}
+/* =========================================
+   REMOVE BOTTOM WHITE STRIP
+========================================= */
 
 html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
-
   width: 100%;
-  min-height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: clip !important;
 }
 
 body {
-  margin: 0;
-
-  background: #f8fafc;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-
-/* =========================================
-   DARK BODY
-========================================= */
-
-body.dark-mode {
-  background: #0f172a;
-  color: #f8fafc;
-}
-
-
-/* =========================================
-   REMOVE DEFAULT BUTTON FONT ISSUE
-========================================= */
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-/* =========================================
-   PHARMACY LAYOUT
-========================================= */
-
-.pharmacy-layout {
   min-height: 100vh;
+  background: #f8fafc;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: clip !important;
+
+  /* Override Vite boilerplate #root rules from index.css
+     that were causing the extra bottom gap (double flex
+     containers + fixed width + centered border layout) */
+  max-width: 100% !important;
+  border-inline: none !important;
+  text-align: initial !important;
+  display: block !important;
+}
+
+.public-layout {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
   display: flex;
-  background: #f6f8fb;
+  flex-direction: column;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow-x: clip !important;
 }
 
-.pharmacy-main {
-  flex: 1;
-  min-width: 0;
-  margin-left: 250px;
+.public-main {
+  width: 100%;
+  flex: 1 1 auto;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow-x: clip !important;
 }
 
-/* Mobile */
-@media (max-width: 900px) {
-  .pharmacy-main {
-    margin-left: 0;
-    width: 100%;
-  }
+.mc-footer {
+  width: 100% !important;
+
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+
+  flex-shrink: 0 !important;
+
+  overflow: hidden !important;
+}
+
+/* =========================================
+   FIX: Toastify's internal <section> tag was
+   inheriting global "section { padding: 60px 0 }"
+   from main.css, adding 120px of extra empty
+   space after the footer.
+========================================= */
+.Toastify {
+  padding: 0 !important;
+  position: fixed !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: visible !important;
 }

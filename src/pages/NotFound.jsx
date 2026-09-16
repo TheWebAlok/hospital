@@ -24,8 +24,8 @@ function NotFound() {
         <nav className="breadcrumbs">
           <div className="container">
             <ol>
-              <li><a href="/">Home</a></li>
-              <li className="current">404</li>
+              <li><a href="/">Home</a>  &nbsp; / 404</li>
+            
             </ol>
           </div>
         </nav>
