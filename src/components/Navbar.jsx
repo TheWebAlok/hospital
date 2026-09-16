@@ -298,9 +298,8 @@ export default function Navbar() {
           ================================================= */}
 
           <div
-            className={`nav-main-panel ${
-              menuOpen ? "is-open" : ""
-            }`}
+            className={`nav-main-panel ${menuOpen ? "is-open" : ""
+              }`}
           >
 
             {/* =================================================
@@ -308,9 +307,8 @@ export default function Navbar() {
             ================================================= */}
 
             <nav
-              className={`site-nav ${
-                menuOpen ? "is-open" : ""
-              }`}
+              className={`site-nav ${menuOpen ? "is-open" : ""
+                }`}
             >
 
               <ul>
@@ -410,11 +408,10 @@ export default function Navbar() {
                   </button>
 
                   <ul
-                    className={`nav-dropdown ${
-                      mobileMoreOpen
+                    className={`nav-dropdown ${mobileMoreOpen
                         ? "is-open"
                         : ""
-                    }`}
+                      }`}
                   >
 
                     <li>
@@ -542,11 +539,10 @@ export default function Navbar() {
                   </button>
 
                   <ul
-                    className={`nav-dropdown ${
-                      mobileDropdownOpen
+                    className={`nav-dropdown ${mobileDropdownOpen
                         ? "is-open"
                         : ""
-                    }`}
+                      }`}
                   >
 
                     <li>
@@ -589,11 +585,10 @@ export default function Navbar() {
                       </button>
 
                       <ul
-                        className={`deep-dropdown-menu ${
-                          mobileDeepOpen
+                        className={`deep-dropdown-menu ${mobileDeepOpen
                             ? "is-open"
                             : ""
-                        }`}
+                          }`}
                       >
 
                         <li>
@@ -673,7 +668,7 @@ export default function Navbar() {
 
             <div className="branding-actions">
 
-             
+
 
               {/* APPOINTMENT */}
 
@@ -704,45 +699,45 @@ export default function Navbar() {
               </Link>
 
             </div>
- {!isLoggedIn ? (
-                <Link
-                  to="/login"
-                  className="nav-login-btn"
-                  onClick={handleLoginClick}
-                >
-                  <LogIn size={16} />
+            {!isLoggedIn ? (
+              <Link
+                to="/login"
+                className="nav-login-btn"
+                onClick={handleLoginClick}
+              >
+                <LogIn size={16} />
 
-                  <span>
-                    Login
+                <span>
+                  Login
+                </span>
+              </Link>
+            ) : (
+              <>
+                <Link
+                  to={getDashboardPath()}
+                  className="nav-dashboard-btn text-light"
+                  onClick={closeMenu}
+                >
+                  <LayoutDashboard size={16} />
+
+                  <span className="text-light">
+                    {getDashboardTitle()}
                   </span>
                 </Link>
-              ) : (
-                <>
-                  <Link
-                    to={getDashboardPath()}
-                    className="nav-dashboard-btn text-light"
-                    onClick={closeMenu}
-                  >
-                    <LayoutDashboard size={16} />
 
-                    <span className="text-light">
-                      {getDashboardTitle()}
-                    </span>
-                  </Link>
+                <button
+                  type="button"
+                  className="nav-logout-btn"
+                  onClick={handleLogout}
+                >
+                  <LogOut size={16} />
 
-                  <button
-                    type="button"
-                    className="nav-logout-btn"
-                    onClick={handleLogout}
-                  >
-                    <LogOut size={16} />
-
-                    <span>
-                      Logout
-                    </span>
-                  </button>
-                </>
-              )}
+                  <span>
+                    Logout
+                  </span>
+                </button>
+              </>
+            )}
           </div>
 
           {/* =================================================

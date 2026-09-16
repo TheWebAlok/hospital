@@ -91,6 +91,10 @@ import DoctorProfile from "./AdminDashboard/DoctorProfile";
 import DoctorAppointments from "./AdminDashboard/DoctorAppointments";
 import DoctorVideoConsultation from "./AdminDashboard/DoctorVideoConsultation";
 import PatientVideoConsultation from "./AdminDashboard/PatientVideoConsultation";
+import AIHealthAssistant from "./components/AIHealthAssistant";
+import DoctorProfileById from "./pages/DoctorProfileById";
+import CookieConsent from "./components/Cookieconsent";
+import PrivacyPolicy from "./pages/Privacypolicy";
 
 // =====================================================
 // PUBLIC LAYOUT
@@ -106,7 +110,9 @@ function PublicLayout() {
       </main>
 
       <Footer />
-
+ {/* AI Health Assistant - All Client Pages */}
+      <AIHealthAssistant />
+      <CookieConsent />
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -241,7 +247,8 @@ function App() {
           path="/"
           element={<Home />}
         />
-
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        
         {/* ABOUT */}
 
         <Route
@@ -340,9 +347,15 @@ function App() {
           element={<OrderMedicine />}
         />
         <Route
-  path="/patient/video-consultation"
-  element={<PatientVideoConsultation />}
-/>
+          path="/patient/video-consultation"
+          element={<PatientVideoConsultation />}
+        />
+
+        <Route
+          path="/ai-assistant"
+          element={<AIHealthAssistant />}
+        />
+        <Route path="/doctors/:id" element={<DoctorProfileById />} />
       </Route>
 
       {/* =================================================
@@ -431,9 +444,9 @@ function App() {
           element={<DoctorAppointments />}
         />
         <Route
-  path="/doctor/video-consultation"
-  element={<DoctorVideoConsultation />}
-/>
+          path="/doctor/video-consultation"
+          element={<DoctorVideoConsultation />}
+        />
       </Route>
 
       {/* =================================================
