@@ -129,7 +129,7 @@ export default function Doctor() {
       return photo;
     }
 
-    return `http://localhost:5000${photo}`;
+    return `https://hostbackend-surl.onrender.com${photo}`;
   };
 
   // =====================================================

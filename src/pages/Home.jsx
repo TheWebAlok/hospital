@@ -76,7 +76,7 @@ export default function Home() {
   const getDoctorImage = (doctor, index = 0) => {
     if (doctor?.photo) {
       if (doctor.photo.startsWith("http")) return doctor.photo;
-      return `http://localhost:5000${doctor.photo.startsWith("/") ? "" : "/"}${doctor.photo}`;
+      return `https://hostbackend-surl.onrender.com${doctor.photo.startsWith("/") ? "" : "/"}${doctor.photo}`;
     }
 
     const fallbackImages = [staff2, staff6, staff4, staff8, staff11, staff14];
