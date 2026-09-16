@@ -4,7 +4,6 @@ const API = axios.create({
   baseURL: "https://hostbackend-surl.onrender.com/api",
 });
 
-// Automatically attach JWT token
 API.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
