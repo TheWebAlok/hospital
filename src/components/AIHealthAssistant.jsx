@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -27,6 +27,99 @@ const AIHealthAssistant = () => {
     allergies: "",
     medicalConditions: "",
   });
+
+  // ==========================================
+  // VOICE TYPING (Web Speech API)
+  // ==========================================
+  // "hi-IN" or "en-IN" — patient can toggle between the two.
+  // Works in Chrome / Edge (Chromium). Falls back gracefully
+  // (mic button hidden) on browsers without support, e.g. Firefox.
+  const [voiceLang, setVoiceLang] = useState("hi-IN");
+  const [isListening, setIsListening] = useState(false);
+  const [voiceSupported, setVoiceSupported] = useState(false);
+
+  const recognitionRef = useRef(null);
+  const messageRef = useRef(message);
+
+  // keep a ref of the latest message so the recognition callback
+  // (set up once) always appends to the current text, not a stale one
+  useEffect(() => {
+    messageRef.current = message;
+  }, [message]);
+
+  useEffect(() => {
+    const SpeechRecognitionAPI =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognitionAPI) {
+      setVoiceSupported(false);
+      return;
+    }
+
+    setVoiceSupported(true);
+
+    const recognition = new SpeechRecognitionAPI();
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+      let transcript = "";
+
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript;
+      }
+
+      // prepend whatever was already typed before listening started
+      setMessage(`${recognition._baseText || ""}${transcript}`);
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Voice typing error:", event.error);
+      setIsListening(false);
+    };
+
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+
+    recognitionRef.current = recognition;
+
+    return () => {
+      recognition.stop();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // language change should apply to an already-created recognition instance
+  useEffect(() => {
+    if (recognitionRef.current) {
+      recognitionRef.current.lang = voiceLang;
+    }
+  }, [voiceLang]);
+
+  const toggleListening = () => {
+    const recognition = recognitionRef.current;
+    if (!recognition) return;
+
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false);
+      return;
+    }
+
+    // remember what was already typed, so new speech is appended after it
+    recognition._baseText = message ? `${message} ` : "";
+    recognition.lang = voiceLang;
+
+    try {
+      recognition.start();
+      setIsListening(true);
+    } catch (err) {
+      console.error("Could not start voice typing:", err);
+      setIsListening(false);
+    }
+  };
 
   // ==========================================
   // DOCTOR IMAGE URL
@@ -1038,9 +1131,33 @@ const AIHealthAssistant = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask about your health... / अपने स्वास्थ्य से जुड़ा सवाल पूछें..."
+                placeholder={
+                  isListening
+                    ? "Listening... / सुन रहा हूँ..."
+                    : "Ask about your health... / अपने स्वास्थ्य से जुड़ा सवाल पूछें..."
+                }
                 rows={1}
               />
+
+              {/* VOICE TYPING (mic button) */}
+              {voiceSupported && (
+                <button
+                  type="button"
+                  onClick={toggleListening}
+                  title={
+                    isListening
+                      ? "Stop listening / बोलना बंद करें"
+                      : "Speak your question / बोलकर पूछें"
+                  }
+                  className={`ai-mic-btn ${isListening ? "ai-mic-active" : ""}`}
+                >
+                  {isListening ? (
+                    <i className="bi bi-stop-fill"></i>
+                  ) : (
+                    <i className="bi bi-mic"></i>
+                  )}
+                </button>
+              )}
 
               <button
                 type="button"
@@ -1057,11 +1174,17 @@ const AIHealthAssistant = () => {
                   </>
                 ) : (
                   <>
-                    Send<span className="ms-2">➤</span>
+                    Send<span className="ms-2"><i className="bi bi-send"></i></span>
                   </>
                 )}
               </button>
             </div>
+
+            {isListening && (
+              <div className="ai-listening-indicator text-center small text-danger py-1">
+                🔴 सुन रहा हूँ... bolna band karne ke liye ⏹️ dabayein
+              </div>
+            )}
 
             {/* ==========================================
                 DISCLAIMER
