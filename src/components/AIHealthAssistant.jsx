@@ -310,17 +310,6 @@ const AIHealthAssistant = () => {
   };
 
   // ==========================================
-  // ENTER KEY
-  // ==========================================
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
-    }
-  };
-
-  // ==========================================
   // SUGGESTION
   // ==========================================
 
@@ -1127,62 +1116,53 @@ const AIHealthAssistant = () => {
             ========================================== */}
 
             <div className="ai-chat-footer">
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={
-                  isListening
-                    ? "Listening... / सुन रहा हूँ..."
-                    : "Ask about your health... / अपने स्वास्थ्य से जुड़ा सवाल पूछें..."
-                }
-                rows={1}
-              />
+              <div className="ai-input-wrapper">
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      sendMessage();
+                    }
+                  }}
+                  placeholder="Ask about your health... / अपने स्वास्थ्य से जुड़ा सवाल पूछें..."
+                  rows={1}
+                  disabled={loading}
+                />
 
-              {/* VOICE TYPING (mic button) */}
-              {voiceSupported && (
-                <button
-                  type="button"
-                  onClick={toggleListening}
-                  title={
-                    isListening
-                      ? "Stop listening / बोलना बंद करें"
-                      : "Speak your question / बोलकर पूछें"
-                  }
-                  className={`ai-mic-btn ${isListening ? "ai-mic-active" : ""}`}
-                >
-                  {isListening ? (
-                    <i className="bi bi-stop-fill"></i>
-                  ) : (
-                    <i className="bi bi-mic"></i>
-                  )}
-                </button>
-              )}
-
-              <button
-                type="button"
-                onClick={sendMessage}
-                disabled={loading || !message.trim()}
-              >
-                {loading ? (
-                  <>
-                    <span
-                      className="spinner-border spinner-border-sm me-2"
-                      role="status"
-                    />
-                    ...
-                  </>
-                ) : (
-                  <>
-                    Send<span className="ms-2"><i className="bi bi-send"></i></span>
-                  </>
+                {voiceSupported && (
+                  <button
+                    type="button"
+                    className={`ai-mic-btn-inline ${
+                      isListening ? "ai-mic-active" : ""
+                    }`}
+                    onClick={toggleListening}
+                    title="Voice input"
+                    disabled={loading}
+                  >
+                    <i
+                      className={`bi ${
+                        isListening ? "bi-mic-fill" : "bi-mic"
+                      }`}
+                    ></i>
+                  </button>
                 )}
+              </div>
+
+              <button onClick={sendMessage} disabled={!message.trim() || loading}>
+                Send <i className="bi bi-send"></i>
               </button>
             </div>
 
+            {/* ==========================================
+                LISTENING INDICATOR
+            ========================================== */}
+
             {isListening && (
               <div className="ai-listening-indicator text-center small text-danger py-1">
-                🔴 सुन रहा हूँ... bolna band karne ke liye ⏹️ dabayein
+                <i className="bi bi-record-circle"></i> Listening... press{" "}
+                <i className="bi bi-stop-circle"></i> to stop speaking
               </div>
             )}
 
@@ -1191,9 +1171,8 @@ const AIHealthAssistant = () => {
             ========================================== */}
 
             <div className="ai-chat-disclaimer">
-              ⚕️ AI provides general information and does not replace
-              professional medical advice. For diagnosis and treatment,
-              consult a qualified doctor.
+              ⚕️ For informational purposes only — not a substitute for
+              professional medical advice.
             </div>
           </div>
         </div>
